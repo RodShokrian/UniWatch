@@ -18,3 +18,6 @@ export const within_distance = (distance) => (
 );
 
 // API Key: AGyC1nUMi9K1Dp0PEWOddfUSVxERBNq4dEk6T3fP
+//Documentation for the API: https://github.com/RTICWDT/open-data-maker/blob/master/API.md
+// https://collegescorecard.ed.gov/data/documentation/
+//
