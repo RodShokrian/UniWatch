@@ -1,0 +1,37 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  2014.cost.tuition.out_of_state: 
+  2014.cost.attendance.academic_year: 
+  location.lon: 
+  school.name,: MyString
+  school.minority_serving.historically_black: 
+  school.city,: MyString
+  2014.admissions.sat_scores.average.overall: 
+  2014.cost.tuition.in_state: 
+  2014.aid.median_debt.completers.overall: 
+  school.zip: 
+  2014.admissions.admission_rate.overall: 
+  location.lat: 
+  school.school_url,: MyString
+  school.price_calculator_url,: MyString
+  school.state,: MyString
+  2014.student.enrollment.all: 1
+
+two:
+  2014.cost.tuition.out_of_state: 
+  2014.cost.attendance.academic_year: 
+  location.lon: 
+  school.name,: MyString
+  school.minority_serving.historically_black: 
+  school.city,: MyString
+  2014.admissions.sat_scores.average.overall: 
+  2014.cost.tuition.in_state: 
+  2014.aid.median_debt.completers.overall: 
+  school.zip: 
+  2014.admissions.admission_rate.overall: 
+  location.lat: 
+  school.school_url,: MyString
+  school.price_calculator_url,: MyString
+  school.state,: MyString
+  2014.student.enrollment.all: 1
