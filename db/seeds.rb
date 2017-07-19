@@ -6,21 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+University.destroy_all
 response = HTTParty.get('https://api.data.gov/ed/collegescorecard/v1/schools.json?api_key=AGyC1nUMi9K1Dp0PEWOddfUSVxERBNq4dEk6T3fP&2014.admissions.sat_scores.average.overall__range=1200..&_fields=school.name,school.city,school.state,school.zip,school.school_url,school.price_calculator_url,location.lat,location.lon,school.minority_serving.historically_black,2014.admissions.sat_scores.average.overall,2014.admissions.admission_rate.overall,2014.student.enrollment.all,2014.cost.attendance.academic_year,2014.cost.tuition.in_state,2014.cost.tuition.out_of_state,2014.aid.median_debt.completers.overall&_sort=2014.admissions.sat_scores.average.overall:desc&_per_page=100')
 
 data_array = response["results"]
 parsed_array = []
-parsed_hash = {}
-data_array.each do |university|
-  university.each do |field, value|
-    parsed_field = field.gsub(/2014\./, '')
-    parsed_field = parsed_field.gsub(/\./, '_')
-    parsed_hash[parsed_field] = value
-    parsed_array << parsed_hash
+data_array.map! do |university|
+  key_mapper = {}
+  university.map do |field, value|
+    key_mapper[field] = field.gsub(/2014\./, '').gsub(/\./, '_')
   end
+  university.map {|field, value| [key_mapper[field], value] }.to_h
 end
 
-parsed_array.each do |university|
+data_array.each do |university|
   u = University.create!(university.keys[0] => university.values[0],
                       university.keys[1] => university.values[1],
                       university.keys[2] => university.values[2],

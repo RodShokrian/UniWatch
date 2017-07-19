@@ -10,6 +10,7 @@ import {
 
 import GreetingContainer from './greeting/greeting_container';
 import AuthFormContainer from './auth/auth_form_container';
+import IndexContainer from './index/index_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 
 const App = () => (
@@ -19,10 +20,11 @@ const App = () => (
         <h1>UniWatch</h1>
       </Link>
       <GreetingContainer />
+      <Route path="/" exact component={IndexContainer} />
     </header>
     <Switch>
-      <AuthRoute path="/login" component={AuthFormContainer} />
-      <AuthRoute path="/signup" component={AuthFormContainer} />
+      <AuthRoute path="/login" exact component={AuthFormContainer} />
+      <AuthRoute path="/signup" exact component={AuthFormContainer} />
     </Switch>
   </div>
 );
