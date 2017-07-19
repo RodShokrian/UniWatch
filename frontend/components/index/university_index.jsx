@@ -11,7 +11,6 @@ class UniversityIndex extends React.Component {
     if (Object.keys(this.props.universities).length === 0) {
       return (<div></div>)
     }
-    debugger;
     const universityItems = Object.keys(this.props.universities).map(university => (
       <UniversityItem key={this.props.universities[university].id} university={this.props.universities[university]} />
       )

@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
 import { requestUniversities } from '../../actions/university_actions';
-import { logout } from '../../actions/session_actions';
 import UniversityIndex from './university_index';
 
 const mapStateToProps = (state) => ({

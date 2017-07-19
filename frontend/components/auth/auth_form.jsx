@@ -1,14 +1,21 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link, withRouter, Redirect } from 'react-router-dom';
 
 class AuthForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      email: ''
     };
+    this.guest = {
+      username: 'Guest',
+      password: 'guest123',
+      email: ''
+    }
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginDemo = this.loginDemo.bind(this);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -21,6 +28,11 @@ class AuthForm extends React.Component {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
+  }
+
+  loginDemo() {
+    const user = this.guest
+    this.props.processForm({user});
   }
 
   handleSubmit(e) {
@@ -50,6 +62,40 @@ class AuthForm extends React.Component {
   }
 
   render() {
+    if (this.props.match.path === "/demo") {this.loginDemo();}
+
+    if (this.props.match.path == "/login") {
+      return (
+        <div className="login-form-container">
+          <form onSubmit={this.handleSubmit} className="login-form-box">
+            Welcome to UniWatch!
+            <br/>
+            Please {this.props.formType} or {this.navLink()}
+            {this.renderErrors()}
+            <div className="login-form">
+              <br/>
+              <label>Username:
+                <input type="text"
+                  value={this.state.username}
+                  onChange={this.update('username')}
+                  className="login-input"
+                />
+              </label>
+              <br/>
+              <label>Password:
+                <input type="password"
+                  value={this.state.password}
+                  onChange={this.update('password')}
+                  className="login-input"
+                />
+              </label>
+              <br/>
+              <input type="submit" value="Submit" />
+            </div>
+          </form>
+        </div>
+      );
+    }
     return (
       <div className="login-form-container">
         <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -58,6 +104,14 @@ class AuthForm extends React.Component {
           Please {this.props.formType} or {this.navLink()}
           {this.renderErrors()}
           <div className="login-form">
+            <br/>
+            <label>Email:
+              <input type="text"
+                value={this.state.email}
+                onChange={this.update('email')}
+                className="login-input"
+              />
+            </label>
             <br/>
             <label>Username:
               <input type="text"
