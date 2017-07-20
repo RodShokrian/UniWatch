@@ -17,10 +17,6 @@ input .login-input {
   background-color: white;
 }
 
-.login-signup-buttons {
-  padding-left: 95%;
-}
-
 .submitbutton {
   color: #fff;
   cursor: pointer;
@@ -30,4 +26,11 @@ input .login-input {
   height: 41px;
   width: 119px;
   font-family: 'Poppins', sans-serif;
+}
+
+.nav-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: #222;
 }

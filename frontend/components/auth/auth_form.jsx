@@ -62,7 +62,7 @@ class AuthForm extends React.Component {
   }
 
   render() {
-    if (this.props.formType === "demo" ) {this.loginDemo}
+    if (this.props.match.path === "/demo") {this.loginDemo();}
 
     if (this.props.match.path == "/login") {
       return (

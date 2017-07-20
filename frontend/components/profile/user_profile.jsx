@@ -3,7 +3,6 @@ import React from 'react';
 class UserProfile extends React.Component {
 
   render() {
-    debugger;
     return (
       <div>
         <ul className="user-details">

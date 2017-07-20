@@ -10,9 +10,6 @@
 
 .navbar-brand {
   width: 20%;
-}
-
-.navbar-brand {
   justify-content: flex-start;
 }
 
@@ -31,4 +28,12 @@
 
 .navbutton:hover {
     color: white;
+}
+
+.brand {
+  justify-content: flex-start;
+}
+
+.demo-link {
+  align-self: center;
 }
