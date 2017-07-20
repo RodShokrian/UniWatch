@@ -10,10 +10,10 @@ import {
 
 import GreetingContainer from './greeting/greeting_container';
 import ProfileContainer from './profile/profile_container';
-import AuthFormContainer from './auth/auth_form_container';
 import IndexContainer from './index/index_container';
 import ShowContainer from './show/show_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
+import AuthModal from './modals/auth_modal';
 
 const App = () => (
   <div>
@@ -29,11 +29,6 @@ const App = () => (
         <Route path="/university/:universityId" exact component={ShowContainer} />
         <Route path="/profile/:userId" exact component={ProfileContainer} />
     </header>
-    <Switch>
-      <AuthRoute path="/login" exact component={AuthFormContainer} />
-      <AuthRoute path="/signup" exact component={AuthFormContainer} />
-      <AuthRoute path="/demo" exact component={AuthFormContainer} />
-    </Switch>
   </div>
 );
 

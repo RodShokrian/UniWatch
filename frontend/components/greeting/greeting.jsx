@@ -1,32 +1,37 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import AuthModal from '../modals/auth_modal';
+import AuthFormContainer from '../auth/auth_form_container';
 
-// available state: currentUser
-// available actions: logout
+const signedOutGreeting = () => (
+  <header className="navbar">
+    <nav className="unraveled-logo">
+      <Link to="/">
 
-const sessionLinks = () => (
-  <div className="navbar-links navbar-text">
-    <Link to="/login">Login</Link>
-    &nbsp;
-    &nbsp;
-    <Link to="/signup">Signup</Link>
-    &nbsp;
-    &nbsp;
-    <Link to="/demo">Demo</Link>
-  </div>
-);
-
-const personalGreeting = (currentUser, logout) => (
-    <div className="navbar-links navbar-text">
-      <button className="logout" onClick={logout}>Log Out</button>
-      <Link to={`/profile/${currentUser.id}`}>
-        <span>My Profile</span>
       </Link>
-    </div>
+    </nav>
+
+    <nav className="login-signup-buttons">
+      &nbsp;
+      <AuthModal formType="login"/>
+      &nbsp;
+      <AuthModal formType="signup"/>
+      &nbsp;
+      <button className="navbutton" onClick={AuthFormContainer} formType="demo"/>
+    </nav>
+  </header>
 );
+
+const signedInGreeting = (currentUser, logout) => (
+	<hgroup className="navbar">
+    <h2 className="header-name">Hi, {currentUser.email}!</h2>
+    <button className="header-button" onClick={logout}>Sign Out</button>
+	</hgroup>
+);
+
 
 const Greeting = ({ currentUser, logout }) => (
-  currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+  currentUser ? signedInGreeting(currentUser, logout) : signedOutGreeting()
 );
 
 export default Greeting;
