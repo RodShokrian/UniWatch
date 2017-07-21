@@ -35,7 +35,7 @@ class UniversityShow extends React.Component {
           </li>
         </ul>
         <div className="news-feed-box">
-          <NewsFeedContainer />
+          <NewsFeedContainer university={university} />
         </div>
       </div>
     )

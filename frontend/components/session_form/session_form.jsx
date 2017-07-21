@@ -5,7 +5,7 @@ class SessionForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
+      username: '',
       password: ''
     };
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -62,15 +62,16 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="login-form-container">
+        <h3>UniWatch</h3>
         <form onSubmit={this.handleSubmit} className="login-form-box">
           <br/>
           <div className="login-form">
             <br/>
             <label>
               <input type="text"
-                placeholder="email"
+                placeholder="username"
                 value={this.state.username}
-                onChange={this.update('email')}
+                onChange={this.update('username')}
                 className="login-input"
               />
             </label>

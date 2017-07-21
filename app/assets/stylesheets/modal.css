@@ -1,7 +1,7 @@
 /*modals */
 .ReactModal__Content {
-  width: 34%;
-  height: 45%;
+  width: 40%;
+  height: 60%;
   box-sizing: border-box;
 }
 
@@ -9,8 +9,12 @@
   width: 379px;
   height: 34px;
   font-family: 'Poppins', sans-serif;
+  font-size: 120%;
+  font-weight: bold;
   padding-top: 5px;
   margin: 5px;
+  text-align: center;
+  border-radius: 2px;
 }
 
 input .login-input {
@@ -18,14 +22,16 @@ input .login-input {
 }
 
 .submitbutton {
-  color: #fff;
+  background-color: #0275d8;
   cursor: pointer;
   display: block;
   position: relative;
   border: 2px solid black;
   height: 41px;
-  width: 119px;
+  width: 65%;
   font-family: 'Poppins', sans-serif;
+  border-radius: 5px;
+  margin: auto;
 }
 
 .nav-box {
@@ -33,4 +39,17 @@ input .login-input {
   flex-direction: row;
   justify-content: flex-end;
   background-color: #222;
+}
+
+.exit-button {
+  background-color: #0275d8;
+  border: none;
+  margin-right: 10px;
+  transition-duration: 0.4s;
+  border-radius: 5px;
+  border: 2px solid black;
+}
+
+h3 {
+  text-align: center;
 }

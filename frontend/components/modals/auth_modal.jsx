@@ -5,13 +5,18 @@ import SessionFormSignUpContainer from '../session_form/session_form_signup_cont
 import SessionFormLoginContainer from '../session_form/session_form_login_container';
 
 const customStyles = {
+  overlay : {
+
+  },
   content : {
-    top                   : '30%',
+    top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    // backgroundColor       : '#F5F5DC'
+
   }
 };
 
@@ -45,7 +50,7 @@ class AuthModal extends React.Component {
        let formType;
 
        return (
-         <div>
+         <div className="modal-box">
            {this.props.formType === "signup" ?
              <div>
              <button className="navbutton" onClick={this.openModal}>Signup</button>
@@ -56,7 +61,7 @@ class AuthModal extends React.Component {
                  style={customStyles}
                  contentLabel="Example Modal"
                >
-                 <button onClick={this.closeModal}>X</button>
+                 <button className="exit-button" onClick={this.closeModal}>X</button>
                  <SessionFormSignUpContainer formType={formType}/>
                </Modal>
              </div> : <div>
@@ -68,7 +73,7 @@ class AuthModal extends React.Component {
                    style={customStyles}
                    contentLabel="Example Modal"
                  >
-                   <button onClick={this.closeModal}>X</button>
+                   <button className="exit-button" onClick={this.closeModal}>X</button>
                    <SessionFormLoginContainer formType={formType}/>
                  </Modal>
              </div>}
