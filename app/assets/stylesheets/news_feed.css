@@ -1,0 +1,42 @@
+.news-feed-box {
+  width: 50%;
+}
+
+.news-feed-container {
+  height: 500px;
+  overflow-y: scroll;
+  border: 3px solid #0275d8;
+  border-radius: 2px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.story-box {
+  display: flex;
+  height: 40%;
+  width: 100%;
+}
+
+.news-image-box {
+  flex: 1;
+}
+
+.news-image {
+  padding: 10px;
+  margin: auto;
+  height: 80%;
+  width: 80%;
+}
+
+.news-content-box {
+  flex: 3;
+}
+
+.news-content-title {
+  font-size: 85%;
+}
+
+.news-content-description {
+  font-size: 75%;
+}

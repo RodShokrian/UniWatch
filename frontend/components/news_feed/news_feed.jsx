@@ -1,16 +1,25 @@
 import React from 'react';
+import NewsItem from './news_item';
 
-class newsFeed extends React.Component {
-  componenetDidMount() {
-    this.props.requestNews();
+class NewsFeed extends React.Component {
+  componentDidMount() {
+    this.props.requestNews(this.props.university.schoolName);
   }
 
   render () {
-    debugger;
+    if (Object.keys(this.props.news).length === 0) {
+      return (<div></div>)
+    }
+    const newsItems = this.props.news.value.map((story, idx) => (
+      <NewsItem key={idx} story={story} />
+      )
+    );
     return (
-      <div></div>
-    )
+      <div className="news-feed-container">
+        {newsItems}
+      </div>
+    );
   }
 }
 
-export default newsFeed;
+export default NewsFeed;
