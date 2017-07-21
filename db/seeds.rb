@@ -6,6 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
+
+response = HTTParty.get('https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=Stanford+University&mkt=en-us&count=10', headers: {"0cp-Apim-Subscription-Key" => "3b9bc7de7d144851a7dd175275170d00"})
+
 University.destroy_all
 response = HTTParty.get('https://api.data.gov/ed/collegescorecard/v1/schools.json?api_key=AGyC1nUMi9K1Dp0PEWOddfUSVxERBNq4dEk6T3fP&2014.admissions.sat_scores.average.overall__range=1200..&_fields=school.name,school.city,school.state,school.zip,school.school_url,school.price_calculator_url,location.lat,location.lon,school.minority_serving.historically_black,2014.admissions.sat_scores.average.overall,2014.admissions.admission_rate.overall,2014.student.enrollment.all,2014.cost.attendance.academic_year,2014.cost.tuition.in_state,2014.cost.tuition.out_of_state,2014.aid.median_debt.completers.overall&_sort=2014.admissions.sat_scores.average.overall:desc&_per_page=100')
 
