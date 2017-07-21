@@ -9,7 +9,6 @@ class UniversityShow extends React.Component {
     const priceCalculatorUrl = "http://" + university.schoolPriceCalculatorUrl;
     const admissionRate = (university.admissionsAdmissionRateOverall * 100).toString() + "%";
     const hbcuFlag = university.schoolMinorityServingHistoricallyBlack === 1 ? "Yes" : "No";
-    debugger;
     return (
       <div className="show-box">
         <h1 className="university-show-header">{university.schoolName}</h1>
@@ -36,7 +35,7 @@ class UniversityShow extends React.Component {
           </li>
         </ul>
         <div className="news-feed-box">
-          <newsFeedContainer searchString={university.schoolName} />
+          <newsFeedContainer />
         </div>
       </div>
     )

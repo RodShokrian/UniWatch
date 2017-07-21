@@ -7,9 +7,9 @@ export const receiveNews = news => ({
   news
 });
 
-export const requestNews = searchString => dispatch => (
-  parsedString = searchString.replace(/ /g, "+");
-  APIUtil.fetchNews(parsedString).then(news => (
+export const requestNews = searchString => dispatch => {
+  const parsedString = searchString.replace(/ /g, "+");
+  return ( APIUtil.fetchNews(parsedString).then(news => (
     dispatch(receiveNews(news))
-  ))
-);
+  )));
+};
