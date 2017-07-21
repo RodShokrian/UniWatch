@@ -1,0 +1,39 @@
+.navbar {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  background-color: #222;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar-brand {
+  width: 20%;
+  justify-content: flex-start;
+}
+
+.navbar-text {
+  width: 80%;
+  text-align: right;
+}
+
+.navbutton {
+  background-color: #0275d8;
+  border: none;
+  margin-right: 10px;
+  transition-duration: 0.4s;
+  border-radius: 10px;
+}
+
+.navbutton:hover {
+    color: white;
+}
+
+.brand {
+  justify-content: flex-start;
+}
+
+.demo-link {
+  align-self: center;
+}
