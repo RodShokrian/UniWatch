@@ -12,7 +12,7 @@ class UniversityShow extends React.Component {
     return (
       <div className="show-box">
         <h1 className="university-show-header">{university.schoolName}</h1>
-        <h2 className="link-header">{university.schoolSchoolUrl}</h2>
+        <h2 className="link-header"><a href={university.schoolSchoolUrl}>Link</a></h2>
         <ul className="location-list">
           <li>{university.schoolCity}</li>
           <li>{university.schoolState}</li>
@@ -26,10 +26,10 @@ class UniversityShow extends React.Component {
           </ul>
         </div>
         <ul className="cost-list">
-          <li>In-State Tuition: {university.costTuitionInState}</li>
-          <li>Out-of-State Tuition: {university.costTuitionOutOfState}</li>
-          <li>Average Cost of Attendance: {university.costAttendanceAcademicYear}</li>
-          <li>Median Debt Load of Graduates: {university.aidMedianDebtCompletersOverall}</li>
+          <li>In-State Tuition: ${university.costTuitionInState}</li>
+          <li>Out-of-State Tuition: ${university.costTuitionOutOfState}</li>
+          <li>Average Cost of Attendance: ${university.costAttendanceAcademicYear}</li>
+          <li>Median Debt Load of Graduates: ${university.aidMedianDebtCompletersOverall}</li>
           <li>
             <a href={priceCalculatorUrl}>{university.schoolName} Price Calculator</a>
           </li>
