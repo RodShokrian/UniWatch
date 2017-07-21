@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
+import newsFeedContainer from '../news_feed/news_feed_container';
 
 class UniversityShow extends React.Component {
 
@@ -34,6 +35,9 @@ class UniversityShow extends React.Component {
             <a href={priceCalculatorUrl}>{university.schoolName} Price Calculator</a>
           </li>
         </ul>
+        <div className="news-feed-box">
+          <newsFeedContainer searchString={university.schoolName} />
+        </div>
       </div>
     )
   }

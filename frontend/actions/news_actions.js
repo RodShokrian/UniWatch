@@ -8,7 +8,8 @@ export const receiveNews = news => ({
 });
 
 export const requestNews = searchString => dispatch => (
-  APIUtil.fetchNews(searchString).then(news => (
+  parsedString = searchString.replace(/ /g, "+");
+  APIUtil.fetchNews(parsedString).then(news => (
     dispatch(receiveNews(news))
   ))
 );
