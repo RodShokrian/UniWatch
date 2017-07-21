@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170718205926) do
+ActiveRecord::Schema.define(version: 20170721161814) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "followed_universities", force: :cascade do |t|
+    t.integer  "uniId"
+    t.integer  "followerId"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "universities", force: :cascade do |t|
     t.integer  "cost_tuition_out_of_state"

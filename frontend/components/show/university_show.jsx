@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Route, Link } from 'react-router-dom';
-import newsFeedContainer from '../news_feed/news_feed_container';
+import NewsFeedContainer from '../news_feed/news_feed_container';
 
 class UniversityShow extends React.Component {
 
@@ -35,7 +35,7 @@ class UniversityShow extends React.Component {
           </li>
         </ul>
         <div className="news-feed-box">
-          <newsFeedContainer />
+          <NewsFeedContainer />
         </div>
       </div>
     )

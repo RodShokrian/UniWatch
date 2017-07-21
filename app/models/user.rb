@@ -7,6 +7,13 @@ class User < ApplicationRecord
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
+  has_many :favorites,
+    primary_key: :id,
+    foreign_key: :followerId,
+    class_name: "FollowedUniversity"
+
+  has_many :followedUniversities, through: :favorites, source: :university
+
   attr_reader :password
 
   def password= password
