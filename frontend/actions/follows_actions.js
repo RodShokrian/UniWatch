@@ -1,4 +1,4 @@
-import * as APIUtil from '../util/api_util_university'
+import * as APIUtil from '../util/api_util_university';
 
 export const RECEIVE_FOLLOWS = 'RECEIVE_FOLLOWS';
 

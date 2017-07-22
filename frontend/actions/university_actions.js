@@ -1,7 +1,8 @@
-import * as APIUtil from '../util/api_util_university'
+import * as APIUtil from '../util/api_util_university';
 
 export const RECEIVE_UNIVERSITIES = 'RECEIVE_UNIVERSITIES';
 export const RECEIVE_UNIVERSITY = 'RECEIVE_UNIVERSITY';
+export const RECEIVE_FOLLOWS = 'RECEIVE_FOLLOWS';
 
 export const receiveUniversities = universities => ({
   type: RECEIVE_UNIVERSITIES,
@@ -11,6 +12,11 @@ export const receiveUniversities = universities => ({
 export const receiveUniversity = university => ({
   type: RECEIVE_UNIVERSITY,
   university
+});
+
+export const receiveFollows = follows => ({
+  type: RECEIVE_FOLLOWS,
+  follows
 });
 
 export const requestUniversities = filters => dispatch => (
@@ -29,8 +35,12 @@ export const createFollow = (followerId, uniId) => dispatch => (
   APIUtil.makeFollow(followerId, uniId)
 );
 
-export const requestFollows = id => dispatch => (
-  APIUtil.fetchFollows(id).then(follows => (
-    dispatch(receiveFollows(id))
-  ))
+export const deleteFollow = (userId, followId) => dispatch => (
+  APIUtil.destroyFollow(userId, followId)
 );
+
+export const requestFollows = id => dispatch => {
+  return (APIUtil.fetchFollows(id).then(follows => (
+    dispatch(receiveFollows(follows))
+  )));
+};

@@ -5,7 +5,6 @@ class Api::FollowedUniversitiesController < ApplicationController
   end
 
   def create
-    debugger
     @follow = FollowedUniversity.new(follow_params)
     if @follow.save
       render "api/followed_universities/show"
@@ -15,7 +14,7 @@ class Api::FollowedUniversitiesController < ApplicationController
   end
 
   def destroy
-    @follow = FollowedUniversity.find_by_id(params[:followeduniversity][:id])
+    @follow = FollowedUniversity.find_by_id(params[:id])
     @follow.destroy
     render json: @follow.errors.full_messages
   end

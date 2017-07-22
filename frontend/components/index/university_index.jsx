@@ -12,23 +12,27 @@ class UniversityIndex extends React.Component {
 
   render() {
     if (Object.keys(this.props.universities).length === 0) {
-      return (<div></div>)
+      return (<div></div>);
     }
-    const universityItems = Object.keys(this.props.universities).map(university => (
+
+    const universityItems =
+    Object.keys(this.props.universities).map(university => (
       <UniversityItem
         key={this.props.universities[university].id}
         university={this.props.universities[university]}
         createFollow={this.props.createFollow}
         currentUser={this.props.currentUser}
         follows={this.props.follows}
+        deleteFollow={this.props.deleteFollow}
          />
       )
     );
+
     return (
       <section className="university-index">
           {universityItems}
       </section>
-    )
+    );
   }
 
 

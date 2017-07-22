@@ -1,10 +1,10 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_UNIVERSITIES, RECEIVE_UNIVERSITY }
-from '../actions/university_actions';
+import { RECEIVE_UNIVERSITIES, RECEIVE_UNIVERSITY } from '../actions/university_actions';
+import { RECEIVE_FOLLOWS } from '../actions/follows_actions';
 
 const UniversitiesReducer = (state = {}, action) => {
-  Object.freeze(state)
+  Object.freeze(state);
   let newState = merge({}, state);
 
   switch(action.type) {
@@ -12,7 +12,9 @@ const UniversitiesReducer = (state = {}, action) => {
       return action.universities;
     case RECEIVE_UNIVERSITY:
       const newUniversity = {[action.university.id]: action.university};
-      return merge({}, state, newUniversity);
+      return merge(newState, newUniversity);
+    case RECEIVE_FOLLOWS:
+      return merge(newState, action.follows);
     default:
       return state;
   }
