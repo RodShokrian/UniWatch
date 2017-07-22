@@ -1,10 +1,11 @@
 class Api::FollowedUniversitiesController < ApplicationController
   def index
-    @follows = FollowedUniversity.all
+    @follows = FollowedUniversity.where({followerId: params[:user_id]})
     render "api/followed_universities/index"
   end
 
   def create
+    debugger
     @follow = FollowedUniversity.new(follow_params)
     if @follow.save
       render "api/followed_universities/show"
