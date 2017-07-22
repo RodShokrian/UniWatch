@@ -12,3 +12,22 @@ export const fetchUniversity = id => (
     url: `api/universities/${id}`
   })
 );
+
+export const makeFollow = (followerId, uniId) => (
+  $.ajax({
+    method: 'POST',
+    url: `api/users/${followerId}/followed_universities`,
+    data: { followeduniversity: {
+                                followerId,
+                                uniId
+                                }
+          }
+  })
+)
+
+export const fetchFollows = id => (
+  $.ajax({
+    method: 'GET',
+    url: `api/users/${id}/followed_universities`
+  })
+)

@@ -24,3 +24,13 @@ export const requestUniversity = id => dispatch => (
     dispatch(receiveUniversity(university))
   ))
 );
+
+export const createFollow = (followerId, uniId) => dispatch => (
+  APIUtil.makeFollow(followerId, uniId)
+);
+
+export const requestFollows = id => dispatch => (
+  APIUtil.fetchFollows(id).then(follows => (
+    dispatch(receiveFollows(id))
+  ))
+);
