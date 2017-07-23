@@ -3,11 +3,35 @@
   margin-top: 70px;
 }
 
+.title-location-box {
+  width: 30%;
+}
+
 .university-item-box {
   display: flex;
-  height: 50px;
+  height: 80px;
   justify-content: flex-start;
   align-content: flex-start;
+  border: 1px solid grey;
+  margin-left: 10px;
+  border-radius: 2px;
+}
+
+.university-metrics-box {
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.metrics {
+  font-size: 12px;
+}
+
+.university-seal {
+  height: 80%;
+  width: 10%;
+  margin-left: 5px;
+  margin-top: 5px;
+  margin-right: 5px;
 }
 /* Standard syntax */
 @keyframes follow-animation {

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import UniversityItem from './university_item';
+import ReactPaginate from 'react-paginate';
 
 class UniversityIndex extends React.Component {
   componentDidMount() {
