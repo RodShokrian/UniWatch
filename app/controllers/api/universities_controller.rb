@@ -6,7 +6,7 @@ class Api::UniversitiesController < ApplicationController
   end
 
   def index
-    @universities = University.all
+    @universities = University.all.limit(params[:limit]).offset(params[:offset])
     render :index
   end
 

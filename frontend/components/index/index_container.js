@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { requestUniversities, createFollow, requestFollows, deleteFollow }
 from '../../actions/university_actions';
-import UniversityIndex from './university_index';
+import { UniversityIndex } from './university_index';
 
 const mapStateToProps = (state) => ({
   universities: state.universities,
@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestUniversities: () => dispatch(requestUniversities()),
+  requestUniversities: (perPage, offset) => dispatch(requestUniversities(perPage, offset)),
   createFollow: (followerId, uniId) => dispatch(createFollow(followerId, uniId)),
   requestFollows: (id) => dispatch(requestFollows(id)),
   deleteFollow: (userId, followId) => dispatch(deleteFollow(userId, followId))

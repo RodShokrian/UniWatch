@@ -19,8 +19,8 @@ export const receiveFollows = follows => ({
   follows
 });
 
-export const requestUniversities = filters => dispatch => (
-  APIUtil.fetchUniversities(filters).then(universities => (
+export const requestUniversities = (perPage, offset) => dispatch => (
+  APIUtil.fetchUniversities(perPage, offset).then(universities => (
     dispatch(receiveUniversities(universities))
   ))
 );

@@ -1,8 +1,8 @@
-export const fetchUniversities = filters => (
+export const fetchUniversities = (perPage, offset) => (
   $.ajax({
     method: 'GET',
     url: 'api/universities',
-    filters
+    data: {limit: perPage, offset: offset}
   })
 );
 
@@ -30,7 +30,7 @@ export const destroyFollow = (id, followId) => (
     method: 'DELETE',
     url: `api/users/${id}/followed_universities/${followId}`
   })
-)
+);
 
 export const fetchFollows = id => (
   $.ajax({
