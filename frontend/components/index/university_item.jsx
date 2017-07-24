@@ -7,36 +7,35 @@ class UniversityItem extends React.Component {
   constructor(props) {
     super(props);
     this.state = { following: false };
-    this.toggleFollow = this.toggleFollow.bind(this);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    for (let idx in nextProps.follows) {
-      if (nextProps.follows[idx].uniId === this.props.university.id) {
-        this.setState({ following: true });
-      } else {
-        this.setState({ following: false });
+    if (this.props.currentUser) {
+      for (let idx in this.props.follows) {
+        if (this.props.follows[idx].uniId === this.props.university.id) {
+          this.state = {following: true};
+        }
       }
     }
+    this.toggleFollow = this.toggleFollow.bind(this);
   }
 
   toggleFollow(e) {
     e.preventDefault();
-    const follows = this.props.follows;
-    const university = this.props.university;
-    let toggledFollow = false;
-    for (let idx in this.props.follows) {
-      if (follows[idx].uniId === university.id) {
-        toggledFollow = true;
-        this.setState({ following: false });
-        return this.props.deleteFollow(follows[idx].followerId, follows[idx].id);
+    if (this.state.following) {
+      let followIdx;
+      for (let idx in this.props.follows) {
+        if (this.props.follows[idx].uniId === this.props.university.id) {
+          followIdx = idx;
+        }
       }
+      this.props.deleteFollow(this.props.currentUser.id, this.props.follows[followIdx].id).then(() => {
+        this.setState({following: false});
+      });
+
+
+    } else {
+      this.props.createFollow(this.props.currentUser.id, this.props.university.id).then(() => {
+        this.setState({following: true});
+      });
     }
-    if (toggledFollow === false) {
-      this.props.createFollow(this.props.currentUser.id, this.props.university.id);
-      this.setState({ following: true });
-    }
-    toggledFollow = false;
   }
 
   render () {

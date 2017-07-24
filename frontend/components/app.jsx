@@ -22,8 +22,8 @@ const App = () => (
       <nav className="navbar navbar-fixed-top bg-faded">
         <Link to="/">
         <img className="brand" src="http://res.cloudinary.com/dxucikdys/image/upload/v1500499095/University-symbol-white_fpqpty.png" alt="College symbol" height="38" width="50" />
-        </Link>
         <h2 className="navbar-brand">UniWatch</h2>
+        </Link>
         <GreetingContainer />
         </nav>
         <Route path="/" exact component={IndexContainer} />

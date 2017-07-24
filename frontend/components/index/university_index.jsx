@@ -25,8 +25,11 @@ export class UniversityIndex extends React.Component {
   handlePageClick (data) {
     let selected = data.selected;
     let newOffset = Math.ceil(selected * this.state.perPage);
-    this.setState({offset: newOffset});
-    this.props.requestUniversities(this.state.perPage, this.state.offset);
+    console.log(newOffset);
+    console.log(selected);
+    this.setState({offset: newOffset}, () => {
+      this.props.requestUniversities(this.state.perPage, this.state.offset);
+    });
   }
 
   render() {

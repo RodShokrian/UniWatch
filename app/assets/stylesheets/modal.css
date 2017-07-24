@@ -1,8 +1,13 @@
 /*modals */
 .ReactModal__Content {
-  width: 40%;
+  min-width: 425px;
+  width: 50%;
   height: 60%;
   box-sizing: border-box;
+}
+
+.login-form-container{
+
 }
 
 .login-input {
@@ -15,6 +20,8 @@
   margin: 5px;
   text-align: center;
   border-radius: 2px;
+  display: block;
+  margin: 0 auto;
 }
 
 input .login-input {
@@ -52,4 +59,8 @@ input .login-input {
 
 h3 {
   text-align: center;
+}
+
+.login-form {
+  display: block;
 }

@@ -5,3 +5,5 @@ json.extract! university, :id, :cost_tuition_out_of_state, :cost_attendance_acad
                     :school_zip, :admissions_admission_rate_overall,
                     :location_lat, :school_school_url, :school_price_calculator_url,
                     :school_state, :student_enrollment_all
+
+json.following logged_in? && current_user.follows?(university) ? true : false

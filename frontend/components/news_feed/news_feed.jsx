@@ -8,7 +8,7 @@ class NewsFeed extends React.Component {
 
   render () {
     if (Object.keys(this.props.news).length === 0) {
-      return (<div></div>)
+      return (<div></div>);
     }
     const newsItems = this.props.news.value.map((story, idx) => (
       <NewsItem key={idx} story={story} />
@@ -16,6 +16,7 @@ class NewsFeed extends React.Component {
     );
     return (
       <div className="news-feed-container">
+        <div id="news-headline">In the News:</div>
         {newsItems}
       </div>
     );

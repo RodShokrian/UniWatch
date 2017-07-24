@@ -38,6 +38,10 @@ class User < ApplicationRecord
     self.session_token
   end
 
+  def follows?(university)
+    FollowedUniversity.exists?(uniId: university.id, followerId: self.id)
+  end
+
   private
 
   def ensure_session_token

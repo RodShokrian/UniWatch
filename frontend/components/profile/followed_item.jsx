@@ -1,11 +1,12 @@
-import React, { Component } from 'react';
-import { Route, Link } from 'react-router-dom';
-import NewsFeedContainer from '../news_feed/news_feed_container';
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { merge } from 'lodash';
 
-class UniversityShow extends React.Component {
+
+class FollowedItem extends React.Component {
 
   render() {
-    const university = this.props.currentUniversity;
+    const university = this.props.university;
     const priceCalculatorUrl = "http://" + university.schoolPriceCalculatorUrl;
     const admissionRate = (Math.round(university.admissionsAdmissionRateOverall * 10000)/100).toString() + "%";
     const hbcuFlag = university.schoolMinorityServingHistoricallyBlack === 1 ? "Yes" : "No";
@@ -34,16 +35,9 @@ class UniversityShow extends React.Component {
             <a href={priceCalculatorUrl}>{university.schoolName} Price Calculator</a>
           </div>
         </div>
-        <div className="news-feed-box">
-          <NewsFeedContainer university={university} />
-        </div>
       </div>
     );
   }
-
-
 }
 
-export default UniversityShow;
-
-// change
+export default FollowedItem;

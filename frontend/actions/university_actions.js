@@ -31,9 +31,11 @@ export const requestUniversity = id => dispatch => (
   ))
 );
 
-export const createFollow = (followerId, uniId) => dispatch => (
-  APIUtil.makeFollow(followerId, uniId)
-);
+export const createFollow = (followerId, uniId) => dispatch => {
+  APIUtil.makeFollow(followerId, uniId).then(follow => (
+    console.log(follow)
+  ));
+};
 
 export const deleteFollow = (userId, followId) => dispatch => (
   APIUtil.destroyFollow(userId, followId)

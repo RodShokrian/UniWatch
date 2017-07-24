@@ -1,0 +1,51 @@
+#profile-container {
+  margin-top: 100px;
+  margin-left: 10px;
+}
+
+.followed-universities-box{
+  margin: 10px;
+  padding: 10px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
+}
+
+.item-box{
+  display: flex;
+  border-bottom: solid grey 1px;
+}
+
+#header{
+  width: 33%;
+}
+
+.link-header{
+  font-size: 30px;
+}
+.academics-box{
+  width: 33%;
+  padding-left: 10px;
+  font-size: 18px;
+  font-weight: 500;
+  border-right: solid grey 1px;
+  border-left: solid grey 1px;
+}
+.academics{
+  font-size: 14px;
+  font-weight: 300;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.cost-box{
+  width: 33%;
+  font-size: 14px;
+  margin-left: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.costs {
+  font-size: 14px;
+  font-weight: 300;
+}

@@ -38,3 +38,10 @@ export const fetchFollows = id => (
     url: `api/users/${id}/followed_universities`
   })
 );
+
+export const fetchFollow = (userId, followId) => (
+  $.ajax({
+    method: 'GET',
+    url: `api/users/${userId}/followed_universities/${followId}`
+  })
+);

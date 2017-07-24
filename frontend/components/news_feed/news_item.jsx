@@ -23,6 +23,6 @@ const NewsItem= ({ story }) => {
       </div>
     </div>
   );
-}
+};
 
 export default NewsItem;
