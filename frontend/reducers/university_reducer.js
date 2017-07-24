@@ -18,13 +18,6 @@ const UniversitiesReducer = (state = {}, action) => {
       action.university.follows = [];
       const newUniversity = {[action.university.id]: action.university};
       return merge(newState, newUniversity);
-    case RECEIVE_FOLLOWS:
-      Object.keys(action.follows).forEach(id => {
-        const follow = action.follows[id];
-        const universityId = follow.uniId;
-        newState[universityId].follows.push(follow.id);
-      });
-      return newState;
     default:
       return state;
   }

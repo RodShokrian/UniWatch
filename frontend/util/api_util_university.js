@@ -25,10 +25,15 @@ export const makeFollow = (followerId, uniId) => (
   })
 );
 
-export const destroyFollow = (id, followId) => (
+export const destroyFollow = (followerId, uniId) => (
   $.ajax({
     method: 'DELETE',
-    url: `api/users/${id}/followed_universities/${followId}`
+    url: `api/users/${followerId}/followed_universities`,
+    data: { followeduniversity: {
+                                followerId,
+                                uniId
+                                }
+          }
   })
 );
 

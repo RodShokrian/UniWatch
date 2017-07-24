@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     resources :universities, only: [:index, :show]
   end
 
+  match "/api/users/:user_id/followed_universities", to: "api/followed_universities#destroy", via: "delete", defaults: { id: nil}
+
    root "static_pages#root"
 
 

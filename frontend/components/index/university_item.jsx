@@ -6,34 +6,22 @@ import { merge } from 'lodash';
 class UniversityItem extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { following: false };
-    if (this.props.currentUser) {
-      for (let idx in this.props.follows) {
-        if (this.props.follows[idx].uniId === this.props.university.id) {
-          this.state = {following: true};
-        }
-      }
-    }
+    this.props.university.following ? this.state = { following : true } :
+                                      this.state = { following : false };
     this.toggleFollow = this.toggleFollow.bind(this);
   }
 
   toggleFollow(e) {
     e.preventDefault();
+    const university = this.props.university;
+    const that = this;
     if (this.state.following) {
-      let followIdx;
-      for (let idx in this.props.follows) {
-        if (this.props.follows[idx].uniId === this.props.university.id) {
-          followIdx = idx;
-        }
-      }
-      this.props.deleteFollow(this.props.currentUser.id, this.props.follows[followIdx].id).then(() => {
-        this.setState({following: false});
+      this.props.deleteFollow(this.props.currentUser.id, university.id).then(() => {
+        that.setState({ following: false});
       });
-
-
     } else {
-      this.props.createFollow(this.props.currentUser.id, this.props.university.id).then(() => {
-        this.setState({following: true});
+      this.props.createFollow(this.props.currentUser.id, university.id).then(() => {
+        that.setState({ following: true });
       });
     }
   }

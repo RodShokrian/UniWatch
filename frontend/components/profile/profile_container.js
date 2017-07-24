@@ -9,7 +9,6 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  requestFollows: (id) => dispatch(requestFollows(id)),
   requestUniversities: () => dispatch(requestUniversities(100, 0))
 });
 

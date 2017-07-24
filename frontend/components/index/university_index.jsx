@@ -17,9 +17,6 @@ export class UniversityIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestUniversities(this.state.perPage, this.state.offset);
-    if (this.props.currentUser) {
-      this.props.requestFollows(this.props.currentUser.id);
-    }
   }
 
   handlePageClick (data) {
@@ -44,7 +41,6 @@ export class UniversityIndex extends React.Component {
         university={this.props.universities[university]}
         createFollow={this.props.createFollow}
         currentUser={this.props.currentUser}
-        follows={this.props.follows}
         deleteFollow={this.props.deleteFollow}
          />
       )

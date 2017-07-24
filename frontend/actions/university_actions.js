@@ -14,11 +14,6 @@ export const receiveUniversity = university => ({
   university
 });
 
-export const receiveFollows = follows => ({
-  type: RECEIVE_FOLLOWS,
-  follows
-});
-
 export const requestUniversities = (perPage, offset) => dispatch => (
   APIUtil.fetchUniversities(perPage, offset).then(universities => (
     dispatch(receiveUniversities(universities))
@@ -31,18 +26,10 @@ export const requestUniversity = id => dispatch => (
   ))
 );
 
-export const createFollow = (followerId, uniId) => dispatch => {
-  APIUtil.makeFollow(followerId, uniId).then(follow => (
-    console.log(follow)
-  ));
-};
-
-export const deleteFollow = (userId, followId) => dispatch => (
-  APIUtil.destroyFollow(userId, followId)
+export const createFollow = (followerId, uniId) => dispatch => (
+  APIUtil.makeFollow(followerId, uniId)
 );
 
-export const requestFollows = id => dispatch => {
-  return (APIUtil.fetchFollows(id).then(follows => (
-    dispatch(receiveFollows(follows))
-  )));
-};
+export const deleteFollow = (followerId, uniId) => dispatch => (
+  APIUtil.destroyFollow(followerId, uniId)
+);

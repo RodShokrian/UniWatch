@@ -14,7 +14,9 @@ class Api::FollowedUniversitiesController < ApplicationController
   end
 
   def destroy
-    @follow = FollowedUniversity.find_by_id(params[:id])
+    @follow = FollowedUniversity.find_by_followerId_and_uniId(
+                          params[:followeduniversity][:followerId],
+                          params[:followeduniversity][:uniId])
     @follow.destroy
     render json: @follow.errors.full_messages
   end

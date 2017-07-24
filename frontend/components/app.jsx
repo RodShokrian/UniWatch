@@ -26,10 +26,10 @@ const App = () => (
         </Link>
         <GreetingContainer />
         </nav>
+    </header>
         <Route path="/" exact component={IndexContainer} />
         <Route path="/university/:universityId" exact component={ShowContainer} />
         <Route path="/profile/:userId" exact component={ProfileContainer} />
-    </header>
     <Switch>
       <AuthRoute path="/demo" exact component={AuthFormContainer} />
     </Switch>
