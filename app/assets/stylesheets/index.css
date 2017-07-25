@@ -3,10 +3,6 @@
   display: flex;
 }
 
-#search-bar {
-  height: 30px;
-}
-
 .university-index {
   width: 70%;
   max-width: 800px;

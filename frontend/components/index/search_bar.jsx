@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import Infinite from 'react-infinite';
+import UniversityItem from './university_item';
 
 class SearchBar extends React.Component {
   constructor(props) {
@@ -25,13 +27,32 @@ class SearchBar extends React.Component {
       });
     }
 
+
+    let uniItems = libraries.map( university => (
+      <UniversityItem
+        key={university.id}
+        university={university}
+        createFollow={this.props.createFollow}
+        currentUser={this.props.currentUser}
+        deleteFollow={this.props.deleteFollow}
+         />
+    ));
+
     return (
       <div>
-        <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="Search" />
+        <div className="wrap">
+          <div className="search">
+            <input type="text"
+              value={this.state.searchString} onChange={this.handleChange} placeholder="Search" className="searchTerm" />
+            <button type="submit" className="searchButton" disabled>
+              <i className="fa fa-search"></i>
+            </button>
+          </div>
+        </div> <br />
           <ul>
-            { libraries.map(function(l){
-              return (<li><a href={`/university/${l.id}`}>{l.schoolName}</a></li>);
-            })}
+            <Infinite containerHeight={500} elementHeight={50} useWindowAsScrollContainer>
+              {uniItems}
+            </Infinite>
           </ul>
       </div>
     );

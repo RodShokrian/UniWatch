@@ -144,6 +144,10 @@ img_array = [
 "http://res.cloudinary.com/dxucikdys/image/upload/v1500431243/1200px-University_of_Florida_seal.svg_unefhn.png"
 ]
 
-University.all.each_with_index do |university, idx|
-  university.update(img_url: img_array[idx])
+img_idx = 0
+idx = University.first.id
+while idx <= University.last.id
+  University.all.find_by(id: idx).update(img_url: img_array[img_idx])
+  img_idx += 1
+  idx += 1
 end

@@ -56,27 +56,12 @@ export class UniversityIndex extends React.Component {
     console.log(uniArray);
     return (
       <div id="index-container">
-        <div id="search-bar">
-          <SearchBar uniData={this.props.uniData} />
-        </div>
         <section className="university-index">
-            {universityItems}
-            <ReactPaginate previousLabel={"<"}
-                              nextLabel={">"}
-                              breakLabel={<a href="">...</a>}
-                              breakClassName={"break-me"}
-                              pageCount={10}
-                              marginPagesDisplayed={2}
-                              pageRangeDisplayed={10}
-                              onPageChange={this.handlePageClick}
-                              containerClassName={"pagination"}
-                              subContainerClassName={"pages pagination"}
-                              activeClassName={"active"}
-                              pageClassName={"page-link"}
-                              previousClassName={"previous-link"}
-                              nextClassName={"next-link"}
-                              activeClassName={"active-page"} />
-
+          <SearchBar uniData={this.props.uniData}
+                     universities={this.props.universities}
+                     createFollow={this.props.createFollow}
+                     currentUser={this.props.currentUser}
+                     deleteFollow={this.props.deleteFollow} />
         </section>
       </div>
     );
