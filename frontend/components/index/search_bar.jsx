@@ -5,7 +5,9 @@ import UniversityItem from './university_item';
 class SearchBar extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { searchString: '' };
+    this.state = { searchString: '',
+                    perPage: 10,
+                    offset: 0 };
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -16,8 +18,8 @@ class SearchBar extends React.Component {
 
   render () {
     let libraries =
-    Object.keys(this.props.uniData).map(id => (
-      this.props.uniData[id]
+    Object.keys(this.props.universities).map(id => (
+      this.props.universities[id]
     ));
     let searchString = this.state.searchString.trim().toLowerCase();
 
@@ -49,8 +51,10 @@ class SearchBar extends React.Component {
             </button>
           </div>
         </div> <br />
-          <ul>
-            <Infinite containerHeight={500} elementHeight={50} useWindowAsScrollContainer>
+        <ul className="scroll-container">
+            <Infinite containerHeight={500} elementHeight={50}
+              infiniteLoadBeginEdgeOffset={250}
+              useWindowAsScrollContainer>
               {uniItems}
             </Infinite>
           </ul>

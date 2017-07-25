@@ -18,7 +18,7 @@ const signedInGreeting = (currentUser, logout) => (
   <div className="navbar-links navbar-text">
      <button className="navbutton" onClick={logout}>Log Out</button>
      <Link to={`/profile/${currentUser.id}`}>
-       <span>My Profile</span>
+       <span id="profile">My Profile</span>
      </Link>
    </div>
 );

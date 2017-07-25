@@ -6,7 +6,8 @@ class SessionForm extends React.Component {
     super(props);
     this.state = {
       username: '',
-      password: ''
+      password: '',
+      newSession: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
@@ -14,6 +15,11 @@ class SessionForm extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (nextProps.loggedIn) {
       this.props.history.push('/');
+    }
+    if (nextProps.formType === this.props.formType) {
+      this.setState({ newSession: true });
+    } else {
+      this.setState({ newSession: false });
     }
   }
 
@@ -48,15 +54,17 @@ class SessionForm extends React.Component {
 
 
   renderErrors() {
-    return(
-      <ul>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    if (this.state.newSession) {
+      return(
+        <ul>
+          {this.props.errors.map((error, i) => (
+            <li key={`error-${i}`}>
+              {error}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   }
 
   render() {

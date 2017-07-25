@@ -34,7 +34,7 @@ class UniversityItem extends React.Component {
           <img className="university-seal" src={university.imgUrl} />
           <div className="title-location-box">
             <Link to={`/university/${this.props.university.id}`}>
-              <span> { this.props.university.schoolName } </span>
+              <span id="index-name"> { this.props.university.schoolName } </span>
             </Link>
             <div className="university-location">
               <span>{university.schoolCity}, {university.schoolState}</span>

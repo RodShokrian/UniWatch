@@ -1,12 +1,25 @@
 #profile-container {
-  margin-top: 100px;
+  margin-top: 63px;
+  background-color: #D5D5D5;
+}
+
+.profile-name-container {
+  margin-left: 20px;
+  margin-top: 10px;
+}
+
+#follows-header {
+  margin-left: 10px;
+}
+
+.followed-universities-container {
   margin-left: 10px;
 }
 
 .followed-universities-box{
   margin: 10px;
   padding: 10px;
-  background-color: #fff;
+  background-color: #EFEFEF;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
 }
 
@@ -21,7 +34,14 @@
 
 .link-header{
   font-size: 30px;
+
 }
+
+#link-header {
+  color: #6D7993;
+}
+
+
 .academics-box{
   width: 33%;
   padding-left: 10px;
@@ -48,4 +68,8 @@
 .costs {
   font-size: 14px;
   font-weight: 300;
+}
+
+#price-calculator {
+  color: #6D7993;
 }

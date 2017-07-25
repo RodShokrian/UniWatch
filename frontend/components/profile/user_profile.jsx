@@ -19,7 +19,9 @@ class UserProfile extends React.Component {
     });
     return (
       <div id="profile-container">
-        <h2 id="profile-name">{user.username}</h2> <br />
+        <div className="profile-name-container">
+          <h2 id="profile-name">{user.username}</h2>
+        </div> <br />
         <div className="followed-universities-container">
           <h4 id="follows-header">Followed Universities</h4>
           <div className="followed-universities-box">

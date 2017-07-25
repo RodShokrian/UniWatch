@@ -15,7 +15,7 @@ class FollowedItem extends React.Component {
         <div id="header">
           <h2 className="link-header">
             <Link to={`/university/${university.id}`}>
-              <span> { this.props.university.schoolName } </span>
+              <span id="link-header"> { this.props.university.schoolName } </span>
             </Link>
           </h2>
           <div className="location">
@@ -27,13 +27,14 @@ class FollowedItem extends React.Component {
             <div className="academics">SAT Average (Reading & Math): {university.admissionsSatScoresAverageOverall}</div>
         </div>
         <div className="cost-box">Finances
+          <div className="costs">
+            <a id="price-calculator" href={priceCalculatorUrl}>{university.schoolName} Price Calculator</a>
+          </div>
           <div className="costs">In-State Tuition: ${university.costTuitionInState}</div>
           <div className="costs">Out-of-State Tuition: ${university.costTuitionOutOfState}</div>
           <div className="costs">Average Cost of Attendance: ${university.costAttendanceAcademicYear}</div>
           <div className="costs">Median Debt Load of Graduates: ${university.aidMedianDebtCompletersOverall}</div>
-          <div className="costs">
-            <a href={priceCalculatorUrl}>{university.schoolName} Price Calculator</a>
-          </div>
+
         </div>
       </div>
     );
