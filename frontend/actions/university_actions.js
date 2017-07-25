@@ -2,7 +2,7 @@ import * as APIUtil from '../util/api_util_university';
 
 export const RECEIVE_UNIVERSITIES = 'RECEIVE_UNIVERSITIES';
 export const RECEIVE_UNIVERSITY = 'RECEIVE_UNIVERSITY';
-export const RECEIVE_FOLLOWS = 'RECEIVE_FOLLOWS';
+export const RECEIVE_UNI_DATA = 'RECEIVE_UNI_DATA';
 
 export const receiveUniversities = universities => ({
   type: RECEIVE_UNIVERSITIES,
@@ -13,6 +13,17 @@ export const receiveUniversity = university => ({
   type: RECEIVE_UNIVERSITY,
   university
 });
+
+export const receiveUniData = uniData => ({
+  type: RECEIVE_UNI_DATA,
+  uniData
+});
+
+export const requestUniData = () => dispatch => (
+  APIUtil.fetchUniData().then(uniData => (
+    dispatch(receiveUniData(uniData))
+  ))
+);
 
 export const requestUniversities = (perPage, offset) => dispatch => (
   APIUtil.fetchUniversities(perPage, offset).then(universities => (

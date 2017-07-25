@@ -1,7 +1,6 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_UNIVERSITIES, RECEIVE_UNIVERSITY } from '../actions/university_actions';
-import { RECEIVE_FOLLOWS, RECEIVE_FOLLOW } from '../actions/follows_actions';
+import { RECEIVE_UNIVERSITIES, RECEIVE_UNIVERSITY, RECEIVE_UNI_DATA } from '../actions/university_actions';
 
 const UniversitiesReducer = (state = {}, action) => {
   Object.freeze(state);

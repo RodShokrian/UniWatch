@@ -31,7 +31,7 @@ class UniversityItem extends React.Component {
     if (this.props.currentUser) {
       return (
         <div className="university-item-box">
-          <img className="university-seal" src="http://res.cloudinary.com/dxucikdys/image/upload/v1500499016/Science-University_yzgogm.ico" />
+          <img className="university-seal" src={university.imgUrl} />
           <div className="title-location-box">
             <Link to={`/university/${this.props.university.id}`}>
               <span> { this.props.university.schoolName } </span>
@@ -50,7 +50,7 @@ class UniversityItem extends React.Component {
     }
     return (
       <div className="university-item-box">
-        <img className="university-seal" src="http://res.cloudinary.com/dxucikdys/image/upload/v1500499016/Science-University_yzgogm.ico" />
+        <img className="university-seal" src={university.imgUrl} />
         <div className="title-location-box">
           <Link to={`/university/${this.props.university.id}`}>
             <span> { this.props.university.schoolName } </span>

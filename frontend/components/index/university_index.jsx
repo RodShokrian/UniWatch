@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import UniversityItem from './university_item';
 import ReactPaginate from 'react-paginate';
+import SearchBar from './search_bar';
 
 export class UniversityIndex extends React.Component {
   constructor(props) {
@@ -17,6 +18,7 @@ export class UniversityIndex extends React.Component {
 
   componentDidMount() {
     this.props.requestUniversities(this.state.perPage, this.state.offset);
+    this.props.requestUniData();
   }
 
   handlePageClick (data) {
@@ -46,26 +48,36 @@ export class UniversityIndex extends React.Component {
       )
     );
 
-    return (
-      <section className="university-index">
-          {universityItems}
-          <ReactPaginate previousLabel={"<"}
-                            nextLabel={">"}
-                            breakLabel={<a href="">...</a>}
-                            breakClassName={"break-me"}
-                            pageCount={10}
-                            marginPagesDisplayed={2}
-                            pageRangeDisplayed={10}
-                            onPageChange={this.handlePageClick}
-                            containerClassName={"pagination"}
-                            subContainerClassName={"pages pagination"}
-                            activeClassName={"active"}
-                            pageClassName={"page-link"}
-                            previousClassName={"previous-link"}
-                            nextClassName={"next-link"}
-                            activeClassName={"active-page"} />
+    const uniArray =
+    Object.keys(this.props.uniData).map(id => (
+      this.props.uniData[id]
+    ));
 
-      </section>
+    console.log(uniArray);
+    return (
+      <div id="index-container">
+        <div id="search-bar">
+        </div>
+        <section className="university-index">
+            {universityItems}
+            <ReactPaginate previousLabel={"<"}
+                              nextLabel={">"}
+                              breakLabel={<a href="">...</a>}
+                              breakClassName={"break-me"}
+                              pageCount={10}
+                              marginPagesDisplayed={2}
+                              pageRangeDisplayed={10}
+                              onPageChange={this.handlePageClick}
+                              containerClassName={"pagination"}
+                              subContainerClassName={"pages pagination"}
+                              activeClassName={"active"}
+                              pageClassName={"page-link"}
+                              previousClassName={"previous-link"}
+                              nextClassName={"next-link"}
+                              activeClassName={"active-page"} />
+
+        </section>
+      </div>
     );
   }
 }

@@ -6,6 +6,14 @@ export const fetchUniversities = (perPage, offset) => (
   })
 );
 
+export const fetchUniData = () => (
+  $.ajax({
+    method: 'GET',
+    url: 'api/universities',
+    data: {limit: 100, offset: 0}
+  })
+);
+
 export const fetchUniversity = id => (
   $.ajax({
     method: 'GET',

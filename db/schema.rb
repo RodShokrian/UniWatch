@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721161814) do
+ActiveRecord::Schema.define(version: 20170725003317) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 20170721161814) do
     t.integer  "student_enrollment_all"
     t.datetime "created_at",                                 null: false
     t.datetime "updated_at",                                 null: false
+    t.string   "img_url"
     t.index ["admissions_admission_rate_overall"], name: "index_universities_on_admissions_admission_rate_overall", using: :btree
     t.index ["admissions_sat_scores_average_overall"], name: "index_universities_on_admissions_sat_scores_average_overall", using: :btree
     t.index ["aid_median_debt_completers_overall"], name: "index_universities_on_aid_median_debt_completers_overall", using: :btree

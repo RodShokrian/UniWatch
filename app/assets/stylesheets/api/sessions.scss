@@ -8,6 +8,10 @@
   width: 100%;
 }
 
+#logo{
+  align-self: flex-start;
+}
+
 .navbar-brand {
   width: 20%;
   justify-content: flex-start;
@@ -32,9 +36,6 @@
     color: white;
 }
 
-.brand {
-  justify-content: flex-start;
-}
 
 .demo-link {
   align-self: center;
