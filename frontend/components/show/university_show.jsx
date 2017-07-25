@@ -4,17 +4,19 @@ import NewsFeedContainer from '../news_feed/news_feed_container';
 
 class UniversityShow extends React.Component {
 
+
   render() {
     const university = this.props.currentUniversity;
     const priceCalculatorUrl = "http://" + university.schoolPriceCalculatorUrl;
     const admissionRate = (Math.round(university.admissionsAdmissionRateOverall * 10000)/100).toString() + "%";
     const hbcuFlag = university.schoolMinorityServingHistoricallyBlack === 1 ? "Yes" : "No";
     return (
-      <div className="item-box">
+      <div className="show-page-container">
+      <div className="show-box">
         <div id="header">
           <h2 className="link-header">
             <Link to={`/university/${university.id}`}>
-              <span> { this.props.university.schoolName } </span>
+              <span> { university.schoolName } </span>
             </Link>
           </h2>
           <div className="location">
@@ -34,9 +36,10 @@ class UniversityShow extends React.Component {
             <a href={priceCalculatorUrl}>{university.schoolName} Price Calculator</a>
           </div>
         </div>
-        <div className="news-feed-box">
-          <NewsFeedContainer university={university} />
-        </div>
+      </div>
+      <div className="news-feed-box">
+        <NewsFeedContainer university={university} />
+      </div>
       </div>
     );
   }
