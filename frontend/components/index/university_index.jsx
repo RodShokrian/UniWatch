@@ -57,6 +57,7 @@ export class UniversityIndex extends React.Component {
     return (
       <div id="index-container">
         <div id="search-bar">
+          <SearchBar uniData={this.props.uniData} />
         </div>
         <section className="university-index">
             {universityItems}

@@ -21,16 +21,16 @@ class SearchBar extends React.Component {
 
     if (searchString.length > 0) {
       libraries = libraries.filter(function(l){
-        return l.name.toLowerCase().match( searchString );
+        return l.schoolName.toLowerCase().match( searchString );
       });
     }
 
     return (
       <div>
-        <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="Type here" />
+        <input type="text" value={this.state.searchString} onChange={this.handleChange} placeholder="Search" />
           <ul>
             { libraries.map(function(l){
-              return (<li>{l.name} <a href={l.url}>{l.url}</a></li>);
+              return (<li><a href={`/university/${l.id}`}>{l.schoolName}</a></li>);
             })}
           </ul>
       </div>

@@ -1,5 +1,6 @@
 #index-container {
   margin-top: 70px;
+  display: flex;
 }
 
 #search-bar {
@@ -46,6 +47,17 @@
   font-size: 14px;
   font-weight: 500;
 }
+
+/* Chrome, Safari, Opera */
+@-webkit-keyframes follow-animation {
+  from {background: white; color: #3399FF; width: 85px; left: 50px;}
+  to {background: #2EB82E; border-color: #2EB82E; color: #ffffff; width: 120px; left: 35px;}
+}
+@-webkit-keyframes unfollow-animation {
+  from {background: #2EB82E; color: #ffffff; width: 120px; left: 35px;}
+  to {background: white; border-color: #3399FF; color: #3399FF; width: 85px; left: 50px;}
+}
+
 /* Standard syntax */
 @keyframes follow-animation {
   from {background: white; color: #3399FF; width: 85px; left: 50px;}
