@@ -28,13 +28,19 @@ class UniversityItem extends React.Component {
 
   render () {
     const university = this.props.university;
+    let name;
+    if (university.schoolName.length > 45) {
+      name = university.schoolName.slice(0, 45) + "...";
+    } else {
+      name = university.schoolName;
+    }
     if (this.props.currentUser) {
       return (
         <div className="university-item-box">
           <img className="university-seal" src={university.imgUrl} />
           <div className="title-location-box">
-            <Link to={`/university/${this.props.university.id}`}>
-              <span id="index-name"> { this.props.university.schoolName } </span>
+            <Link to={`/university/${university.id}`}>
+              <span id="index-name"> { name } </span>
             </Link>
             <div className="university-location">
               <span>{university.schoolCity}, {university.schoolState}</span>
@@ -52,8 +58,8 @@ class UniversityItem extends React.Component {
       <div className="university-item-box">
         <img className="university-seal" src={university.imgUrl} />
         <div className="title-location-box">
-          <Link to={`/university/${this.props.university.id}`}>
-            <span> { this.props.university.schoolName } </span>
+          <Link to={`/university/${university.id}`}>
+            <span id="index-name"> { name } </span>
           </Link>
           <div className="university-location">
             <span>{university.schoolCity}, {university.schoolState}</span>

@@ -4,7 +4,7 @@ import UniversityShow from './university_show';
 
 const mapStateToProps = (state, { match }) => {
   return {
-  currentUniversity: state.universities[match.params.universityId]
+  currentUniversity: state.uniData[match.params.universityId]
   };
 };
 

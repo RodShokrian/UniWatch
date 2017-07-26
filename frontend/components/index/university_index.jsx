@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import UniversityItem from './university_item';
 import SearchBar from './search_bar';
-import Infinite from 'react-infinite';
+import ReactPaginate from 'react-paginate';
 
 export class UniversityIndex extends React.Component {
   constructor(props) {
@@ -10,11 +10,12 @@ export class UniversityIndex extends React.Component {
 
     this.state = {
       searchString: '',
-      perPage: 20,
+      data: [],
+      perPage: 10,
       offset: 0
     };
-    this.infiniteLoad = this.infiniteLoad.bind(this);
     this.handleChange = this.handleChange.bind(this);
+    this.handlePageClick = this.handlePageClick.bind(this);
   }
 
   componentDidMount() {
@@ -22,15 +23,16 @@ export class UniversityIndex extends React.Component {
     this.props.requestUniData();
   }
 
-  infiniteLoad () {
-    let newPerPage = this.state.perPage + 20;
-    this.setState({perPage: newPerPage}, () => {
-      this.props.requestUniversities(this.state.perPage, this.state.offset);
-    });
-  }
-
   handleChange(e) {
       this.setState({searchString: e.target.value});
+  }
+
+  handlePageClick (data) {
+    let selected = data.selected;
+    let newOffset = Math.ceil(selected * this.state.perPage);
+    this.setState({offset: newOffset}, () => {
+      this.props.requestUniversities(this.state.perPage, this.state.offset);
+    });
   }
 
   render() {
@@ -50,16 +52,29 @@ export class UniversityIndex extends React.Component {
         return l.schoolName.toLowerCase().match( searchString );
       });
     }
-
-    let uniItems = libraries.map( university => (
-      <UniversityItem
-        key={university.id}
-        university={university}
-        createFollow={this.props.createFollow}
-        currentUser={this.props.currentUser}
-        deleteFollow={this.props.deleteFollow}
-         />
-    ));
+    let uniItems;
+    if ((searchString.length > 0) === false) {
+      uniItems =
+      libraries.slice(this.state.offset, this.state.perPage + this.state.offset).map(university => (
+        <UniversityItem
+          key={university.id}
+          university={university}
+          createFollow={this.props.createFollow}
+          currentUser={this.props.currentUser}
+          deleteFollow={this.props.deleteFollow}
+           />
+      ));
+    } else {
+      uniItems = libraries.map(university => (
+        <UniversityItem
+          key={university.id}
+          university={university}
+          createFollow={this.props.createFollow}
+          currentUser={this.props.currentUser}
+          deleteFollow={this.props.deleteFollow}
+           />
+       ));
+    }
 
     return (
       <div id="index-container">
@@ -77,10 +92,22 @@ export class UniversityIndex extends React.Component {
             </div>
           </div> <br />
           <ul className="scroll-container">
-              <Infinite containerHeight={500} elementHeight={50}
-                useWindowAsScrollContainer>
-                {uniItems}
-              </Infinite>
+            {uniItems}
+            <ReactPaginate previousLabel={"<"}
+                 nextLabel={">"}
+                 breakLabel={<a href="">...</a>}
+                 breakClassName={"break-me"}
+                 pageCount={10}
+                 marginPagesDisplayed={2}
+                 pageRangeDisplayed={10}
+                 onPageChange={this.handlePageClick}
+                 containerClassName={"pagination"}
+                 subContainerClassName={"pages pagination"}
+                 activeClassName={"active"}
+                 pageClassName={"page-link"}
+                 previousClassName={"previous-link"}
+                 nextClassName={"next-link"}
+                 activeClassName={"active-page"} />
             </ul>
         </section>
       </div>
