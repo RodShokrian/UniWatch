@@ -15,6 +15,7 @@ import ShowContainer from './show/show_container';
 import AuthFormContainer from './auth/auth_form_container';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import AuthModal from './modals/auth_modal';
+import Footer from './footer';
 
 const App = () => (
   <div>
@@ -31,10 +32,11 @@ const App = () => (
     </header>
     <Switch>
       <Route path="/" exact component={IndexContainer} />
-      <Route path="/university/:universityId" exact component={ShowContainer} />
-      <Route path="/profile/:userId" exact component={ProfileContainer} />
+      <ProtectedRoute path="/university/:universityId" exact component={ShowContainer} />
+      <ProtectedRoute path="/profile/:userId" exact component={ProfileContainer} />
       <AuthRoute path="/demo" exact component={AuthFormContainer} />
     </Switch>
+    <Footer />
   </div>
 );
 

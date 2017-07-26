@@ -20,7 +20,8 @@ class UserProfile extends React.Component {
     return (
       <div id="profile-container">
         <div className="profile-name-container">
-          <h2 id="profile-name">{user.username}</h2>
+          <h2 className="profile-name">User Profile</h2>
+          <h2 className="profile-name">{user.username}</h2>
         </div> <br />
         <div className="followed-universities-container">
           <h4 id="follows-header">Followed Universities</h4>

@@ -87,7 +87,7 @@ export class UniversityIndex extends React.Component {
                 placeholder="Search"
                 className="searchTerm" />
               <button type="submit" className="searchButton" disabled>
-                <i className="fa fa-search"></i>
+                <i className="fa fa-search search-icon"></i>
               </button>
             </div>
           </div> <br />

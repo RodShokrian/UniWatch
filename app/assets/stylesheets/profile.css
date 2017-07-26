@@ -1,50 +1,65 @@
 #profile-container {
   margin-top: 63px;
   background-color: #D5D5D5;
+  height: 100%;
+  padding-left: 4%;
+  padding-right: 4%;
 }
 
 .profile-name-container {
-  margin-left: 20px;
-  margin-top: 10px;
+  padding-top: 1px;
+  padding-left: 5px;
+}
+
+.profile-name {
+  margin-top: 30px;
+  font-size: 48px;
+  font-weight: 600;
 }
 
 #follows-header {
+  margin-top: 20px;
   margin-left: 10px;
+  font-size: 48px;
+  border-bottom: solid black 2px;
+  max-width: 480px;
 }
 
 .followed-universities-container {
-  margin-left: 10px;
 }
 
 .followed-universities-box{
   margin: 10px;
   padding: 10px;
-  background-color: #EFEFEF;
+  background-color: #D5D5D5;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
 }
 
 .item-box{
   display: flex;
   border-bottom: solid grey 1px;
+  min-height: 150px;
 }
 
 #header{
   width: 33%;
-}
-
-.link-header{
-  font-size: 30px;
-
+  padding: 15px;
 }
 
 #link-header {
   color: #6D7993;
+  font-size: 24px;
+}
+
+.profile-location {
+  font-size: 20px;
+  margin-top: 10px;
 }
 
 
 .academics-box{
   width: 33%;
-  padding-left: 10px;
+  padding: 10px;
   font-size: 18px;
   font-weight: 500;
   border-right: solid grey 1px;
@@ -60,7 +75,7 @@
 .cost-box{
   width: 33%;
   font-size: 14px;
-  margin-left: 10px;
+  padding: 10px;
   font-size: 18px;
   font-weight: 500;
 }

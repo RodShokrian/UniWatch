@@ -3,7 +3,7 @@
 #FF3B3F Watermelon
 #EFEFEF Neutral
 #D5D5D5 Paper
-#9O99A2 Overcast
+#9099A2 Overcast
 #6D7993 Lavender
 #96858F Dusty
 
@@ -23,10 +23,6 @@
   max-width: 800px;
 }
 
-.title-location-box {
-  width: 30%;
-}
-
 .scroll-container {
 }
 
@@ -43,6 +39,7 @@
 }
 
 .university-metrics-box {
+  margin-top: 4px;
   margin-left: 20px;
   margin-right: 10px;
 }
@@ -54,14 +51,22 @@
 .university-seal {
   height: 80%;
   width: 70px;
-  margin-left: 5px;
-  margin-top: 5px;
-  margin-right: 5px;
+  margin-left: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.title-location-box {
+  margin: 5px;
+  margin-left: 15px;
+  width: 30%;
 }
 
 .university-location {
   font-size: 14px;
   font-weight: 500;
+  margin-top: 4px;
 }
 
 #index-name {
@@ -71,26 +76,27 @@
 /* Chrome, Safari, Opera */
 @-webkit-keyframes follow-animation {
   from {background: white; color: #6D7993; width: 85px; left: 50px;}
-  to {background: #2EB82E; border-color: #6D7993; color: #ffffff; width: 120px; left: 35px;}
+  to {background: #2EB82E; border-color: #6D7993; color: #ffffff; width: 85px; left: 50px;}
 }
 @-webkit-keyframes unfollow-animation {
-  from {background: #2EB82E; color: #ffffff; width: 120px; left: 35px;}
+  from {background: #2EB82E; color: #ffffff; width: 85px; left: 50px;}
   to {background: white; border-color: #6D7993; color: #6D7993; width: 85px; left: 50px;}
 }
 
 /* Standard syntax */
 @keyframes follow-animation {
   from {background: white; color: #6D7993; width: 85px; left: 50px;}
-  to {background: #2EB82E; border-color: #6D7993; color: #ffffff; width: 120px; left: 35px;}
+  to {background: #2EB82E; border-color: #6D7993; color: #ffffff; width: 85px; left: 50px;}
 }
 @keyframes unfollow-animation {
-  from {background: #2EB82E; color: #ffffff; width: 120px; left: 35px;}
+  from {background: #2EB82E; color: #ffffff; width: 85px; left: 50px;}
   to {background: white; border-color: #6D7993; color: #6D7993; width: 85px; left: 50px;}
 }
 
 .follow-button {
-  margin-top: 10px;
-  margin-left: 5px;
+  margin-top: 22px;
+  margin-left: 20px;
+  margin-right: 20px;
   cursor: pointer;
   -webkit-appearance: none;
   height: 30px;
@@ -123,4 +129,19 @@
   -webkit-animation-fill-mode:forwards;
   animation: follow-animation 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   animation-fill-mode:forwards;
+}
+
+.pagination {
+  margin-top: 25px;
+  width: 80%;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+}
+
+.previous-link {
+  margin-top: 7px;
+}
+
+.next-link {
+  margin-top: 7px;
 }

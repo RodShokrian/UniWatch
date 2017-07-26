@@ -18,7 +18,7 @@ class FollowedItem extends React.Component {
               <span id="link-header"> { university.schoolName } </span>
             </Link>
           </h2>
-          <div className="location">
+          <div className="profile-location">
             {university.schoolCity}, {university.schoolState} {university.schoolZip}
           </div>
         </div>
