@@ -11,6 +11,11 @@ class UniversityItem extends React.Component {
     this.toggleFollow = this.toggleFollow.bind(this);
   }
 
+  componentDidMount() {
+    this.props.university.following ? this.setState({following : true}) :
+                                      this.setState({following : false});
+  }
+
   toggleFollow(e) {
     e.preventDefault();
     const university = this.props.university;

@@ -13,7 +13,7 @@ class AuthForm extends React.Component {
       username: 'Guest',
       password: 'guest123',
       email: ''
-    }
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginDemo = this.loginDemo.bind(this);
   }
@@ -31,7 +31,7 @@ class AuthForm extends React.Component {
   }
 
   loginDemo() {
-    const user = this.guest
+    const user = this.guest;
     this.props.processForm({user});
   }
 

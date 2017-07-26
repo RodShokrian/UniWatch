@@ -4,6 +4,7 @@
 .news-feed-container {
   margin-top: 10px;
   margin-bottom: 10px;
+  padding-top: 80px;
 }
 
 #news-headline {

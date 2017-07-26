@@ -29,10 +29,10 @@ const App = () => (
         <GreetingContainer />
         </nav>
     </header>
-        <Route path="/" exact component={IndexContainer} />
-        <Route path="/university/:universityId" exact component={ShowContainer} />
-        <Route path="/profile/:userId" exact component={ProfileContainer} />
     <Switch>
+      <Route path="/" exact component={IndexContainer} />
+      <Route path="/university/:universityId" exact component={ShowContainer} />
+      <Route path="/profile/:userId" exact component={ProfileContainer} />
       <AuthRoute path="/demo" exact component={AuthFormContainer} />
     </Switch>
   </div>

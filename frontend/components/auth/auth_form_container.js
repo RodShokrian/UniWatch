@@ -8,7 +8,7 @@ const mapStateToProps = (state, { match }) => {
   return {
     loggedIn: state.session.currentUser ? true : false,
     errors: state.session.errors
-  }
+  };
 };
 
 const mapDispatchToProps = (dispatch, { location }) => {

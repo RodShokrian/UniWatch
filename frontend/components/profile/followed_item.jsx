@@ -15,7 +15,7 @@ class FollowedItem extends React.Component {
         <div id="header">
           <h2 className="link-header">
             <Link to={`/university/${university.id}`}>
-              <span id="link-header"> { this.props.university.schoolName } </span>
+              <span id="link-header"> { university.schoolName } </span>
             </Link>
           </h2>
           <div className="location">
