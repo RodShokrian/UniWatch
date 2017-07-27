@@ -14,9 +14,7 @@ const UniversitiesReducer = (state = {}, action) => {
       });
       return action.universities;
     case RECEIVE_UNIVERSITY:
-      action.university.follows = [];
-      const newUniversity = {[action.university.id]: action.university};
-      return merge(newState, newUniversity);
+      return merge(newState, {currentUniversity: action.university});
     default:
       return state;
   }

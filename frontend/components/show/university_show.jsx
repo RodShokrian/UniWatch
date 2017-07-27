@@ -8,10 +8,15 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 class UniversityShow extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {currentUniversity : this.props.currentUniversity};
   }
 
   componentDidMount() {
+    this.props.requestUniversity(this.props.location.pathname.slice(12)).then(
+      () => (this.setState({ currentUniversity: this.props.currentUniversity}))
+    );
+  }
+
+  componentDidUpdate() {
     const map = ReactDOM.findDOMNode(this.refs.map);
     const pos = new google.maps.LatLng(this.props.currentUniversity.locationLat,
                                        this.props.currentUniversity.locationLon);
@@ -25,19 +30,18 @@ class UniversityShow extends React.Component {
       position: pos,
       map: this.map
     });
-  }
-
-  componentDidUpdate() {
     const mapCenter = { lat: this.props.currentUniversity.locationLat,
                         lng: this.props.currentUniversity.locationLon};
-
-    ReactDOM.render(
-      <Map center={mapCenter} />,
-      document.getElementById('root')
-    );
+    // ReactDOM.render(
+      // <Map center={mapCenter} />,
+      // document.getElementById('root')
+    // );
   }
 
   render() {
+    if (!this.props.currentUniversity) {
+      return (<div id="show-map" ref="map"></div>);
+    }
     const university = this.props.currentUniversity;
     const priceCalculatorUrl = "http://" + university.schoolPriceCalculatorUrl;
     const schoolUrl = "http://" + university.schoolSchoolUrl;
