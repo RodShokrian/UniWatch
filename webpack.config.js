@@ -21,6 +21,9 @@ module.exports = {
   },
   devtool: 'source-maps',
   resolve: {
+    alias: {
+      "jquery": path.join(__dirname, "./jquery-stub.js")
+    },
     extensions: [".js", ".jsx", "*"]
   }
 };

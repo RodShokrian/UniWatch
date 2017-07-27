@@ -13,11 +13,11 @@ class FollowedItem extends React.Component {
     return (
       <div className="item-box">
         <div id="header">
-          <h2 className="link-header">
+          <div className="profile-header">
             <Link to={`/university/${university.id}`}>
               <span id="link-header"> { university.schoolName } </span>
             </Link>
-          </h2>
+          </div>
           <div className="profile-location">
             {university.schoolCity}, {university.schoolState} {university.schoolZip}
           </div>

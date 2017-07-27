@@ -14,13 +14,33 @@
 
 #index-container {
   margin-top: 100px;
-  display: flex;
+  height: 100%;
+  padding-bottom: 100px;
   background-color: #D5D5D5;
 }
 
+.index-box {
+  display: flex;
+}
+
+.filters-box {
+  margin-left: 25px;
+  margin-bottom: 50px;
+  width: 20%;
+  max-width: 200px;
+  position: fixed;
+}
+
+.score-filter-header {
+  text-align: center;
+  padding: 5px;
+  margin-bottom: 40px;
+}
+
 .university-index {
-  width: 70%;
+  width: 80%;
   max-width: 800px;
+  margin-left: 20%;
 }
 
 .scroll-container {
@@ -31,11 +51,24 @@
   height: 80px;
   justify-content: flex-start;
   align-content: flex-start;
-  border: 1px solid #9099A2;
+  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
+  background-color: #fff;
+  transition: all 0.3s ease;
   margin-left: 10px;
   margin-top: 15px;
   border-radius: 4px;
   background-color: #EFEFEF;
+}
+
+.university-item-box:hover {
+  opacity: 2;
+  box-shadow:
+         1px 1px #96858F,
+         2px 2px #96858F,
+         3px 3px #96858F,
+         3px 3px #96858F;
+ -webkit-transform: translateX(-3px);
+ transform: translateX(-3px);
 }
 
 .university-metrics-box {
@@ -134,8 +167,8 @@
 .pagination {
   margin-top: 25px;
   width: 80%;
-  margin-left: 0 auto;
-  margin-right: 0 auto;
+  margin-left: 15%;
+  margin-right: 10%;
 }
 
 .previous-link {
