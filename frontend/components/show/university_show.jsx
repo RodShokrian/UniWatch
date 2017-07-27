@@ -43,7 +43,8 @@ class UniversityShow extends React.Component {
       return (<div id="show-map" ref="map"></div>);
     }
     const university = this.props.currentUniversity;
-    const priceCalculatorUrl = university.schoolPriceCalculatorUrl;
+    const priceCalculatorUrl = university.schoolPriceCalculatorUrl.slice(0, 4) === "http" ?
+    university.schoolPriceCalculatorUrl : "https://" + university.schoolPriceCalculatorUrl; 
     const schoolUrl = "http://" + university.schoolSchoolUrl;
     const admissionRate = (Math.round(university.admissionsAdmissionRateOverall * 10000)/100).toString() + "%";
     const hbcuFlag = university.schoolMinorityServingHistoricallyBlack === 1 ? "Yes" : "No";
