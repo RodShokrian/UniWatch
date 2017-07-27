@@ -1,9 +1,10 @@
 #profile-container {
-  padding-top: 100px;
+  padding-top: 140px;
   background-color: #D5D5D5;
   height: 100%;
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 12%;
+  padding-right: 12%;
+  padding-bottom: 200px;
 }
 
 .profile-name-container {

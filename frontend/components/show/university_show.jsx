@@ -8,6 +8,7 @@ const AnyReactComponent = ({ text }) => <div>{text}</div>;
 class UniversityShow extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {currentUniversity : this.props.currentUniversity};
   }
 
   componentDidMount() {
@@ -42,6 +43,7 @@ class UniversityShow extends React.Component {
     const schoolUrl = "http://" + university.schoolSchoolUrl;
     const admissionRate = (Math.round(university.admissionsAdmissionRateOverall * 10000)/100).toString() + "%";
     const hbcuFlag = university.schoolMinorityServingHistoricallyBlack === 1 ? "Yes" : "No";
+    const SATAverage = university.admissionsSatScoresAverageOverall;
     const ACTAverage = university.admissionsActScoresMidpointCumulative ?
     university.admissionsActScoresMidpointCumulative : "N/A";
     const ACTMath = university.admissionsActScoresMidpointMath ?
@@ -71,7 +73,7 @@ class UniversityShow extends React.Component {
           <div id="show-map" ref="map"></div>
           <div className="show-academics-box">Admissions
             <div className="show-academics">Admission Rate: {admissionRate}</div>
-            <div className="show-academics">SAT Average (Reading & Math): {university.admissionsSatScoresAverageOverall}</div>
+            <div className="show-academics">SAT Average (Reading & Math): {SATAverage}</div>
             <div className="show-academics">ACT Average: {ACTAverage}</div>
             <div className="show-academics">ACT Math: {ACTMath}</div>
             <div className="show-academics">ACT Reading: {ACTEnglish}</div>

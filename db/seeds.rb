@@ -156,7 +156,7 @@ follow_idx = University.first.id
 FollowedUniversity.create!(followerId: User.first.id,
                           uniId: University.find_by(id: (follow_idx + 22)).id)
 FollowedUniversity.create!(followerId: User.first.id,
-                          uniId: University.find_by(id: (follow_idx + 32)).id)
+                          uniId: University.find_by(id: (follow_idx + 33)).id)
 FollowedUniversity.create!(followerId: User.first.id,
                           uniId: University.find_by(id: (follow_idx + 64)).id)
 FollowedUniversity.create!(followerId: User.first.id,

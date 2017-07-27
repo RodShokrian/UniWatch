@@ -1,7 +1,7 @@
 export const fetchNews = (searchString) => (
   $.ajax({
     method: 'GET',
-    url: `https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=${searchString}`,
+    url: `https://api.cognitive.microsoft.com/bing/v5.0/news/search?q=${searchString}&count=5`,
     headers: {
       "Ocp-Apim-Subscription-Key": "3b9bc7de7d144851a7dd175275170d00"
     }
