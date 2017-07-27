@@ -9,19 +9,19 @@ const NewsItem= ({ story }) => {
     img = "http://res.cloudinary.com/dxucikdys/image/upload/v1500663273/placeholder_duuvvw.jpg";
   }
   return (
-    <div className="story-box">
+    <a className="story-box" href={story.url}>
       <div className="news-image-box">
         <img className="news-image" src={img} />
       </div>
       <div className="news-content-box">
-        <a className="news-content-title" href={story.url}>
+        <div className="news-content-title">
           {story.name}
-        </a><br/>
+        </div><br/>
         <span className="news-content-description">
           {story.description}
         </span>
       </div>
-    </div>
+    </a>
   );
 };
 

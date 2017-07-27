@@ -35,24 +35,6 @@ class UniversityShow extends React.Component {
       document.getElementById('root')
     );
   }
-  //
-  // componentDidMount () {
-  //   window.initMap = this.initMap;
-  //   loadJS('https://maps.googleapis.com/maps/api/js?key=AIzaSyB5SXTW-o-b5-nfkYUUQ5SQD_N4PVozrOc&callback=initMap');
-  // }
-
-  // initMap() {
-  //       var uluru = {lat: -25.363, lng: 131.044};
-  //       var map = new google.maps.Map(document.getElementById('map'), {
-  //         zoom: 4,
-  //         center: uluru
-  //       });
-  //       var marker = new google.maps.Marker({
-  //         position: uluru,
-  //         map: map
-  //       });
-  //     }
-
 
   render() {
     const university = this.props.currentUniversity;
@@ -74,23 +56,19 @@ class UniversityShow extends React.Component {
           <div className="header-box">
             <img className="header-logo" src={university.imgUrl}></img>
             <div className="header">
-              <h2 className="link-header">
-                <Link to={`/university/${university.id}`}>
-                  <span> { university.schoolName } </span>
-                </Link>
-              </h2>
+              <h2 className="link-header">{ university.schoolName }</h2>
               <div className="location">
                 {university.schoolCity}, {university.schoolState} {university.schoolZip}
               </div>
                 <a href={schoolUrl} className="school-url">School Website</a>
             </div>
           </div>
-          <div className="news-feed-box">
+          <div>
             <NewsFeedContainer university={university} />
           </div>
         </div>
         <div className="right-show-box">
-          <div id="show-map" ref="map">Wut</div>
+          <div id="show-map" ref="map"></div>
           <div className="show-academics-box">Admissions
             <div className="show-academics">Admission Rate: {admissionRate}</div>
             <div className="show-academics">SAT Average (Reading & Math): {university.admissionsSatScoresAverageOverall}</div>

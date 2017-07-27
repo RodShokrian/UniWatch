@@ -16,7 +16,7 @@ class NewsFeed extends React.Component {
     );
     return (
       <div className="news-feed-container">
-        <div id="news-headline">In the News:</div>
+        <div className="news-headline">In the News</div>
         {newsItems}
       </div>
     );
