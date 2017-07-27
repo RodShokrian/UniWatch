@@ -15,18 +15,47 @@
 .page-link {
   margin-left: 5px;
   margin-right: 5px;
+  display: flex;
+}
+
+.page-link a {
+  text-decoration: none;
+  color: #6D7993;
 }
 
 .previous-link {
   margin-left: 5px;
   margin-right: 5px;
+  color: #6D7993;
+  outline: none;
+}
+
+.previous-link a {
+  text-decoration: none;
+  color: #6D7993;
+}
+
+.previous-link a:focus {
+  outline: none;
 }
 
 .next-link {
   margin-right: 5px;
   margin-left: 5px;
+  color: #6D7993;
+  outline: none;
+}
+
+.next-link a {
+  text-decoration: none;
+  color: #6D7993;
+}
+
+.next-link a:focus {
+  outline: none;
 }
 
 .active-page a {
   color: black;
+  outline: none;
 }

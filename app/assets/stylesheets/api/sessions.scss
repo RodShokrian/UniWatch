@@ -11,8 +11,7 @@
 
 #logo{
   align-self: flex-start;
-  width: 15%;
-  margin-right: 10%;
+  width: 30%;
 }
 
 #logo:hover {
@@ -40,7 +39,8 @@
   background-color: #A9A9A9;
   color: black;
   border: none;
-  margin-right: 10px;
+  margin-right: 5px;
+  margin-left: 10px;
   transition-duration: 0.4s;
   border-radius: 10px;
   cursor: pointer;
@@ -48,6 +48,7 @@
   padding: 12px;
   text-decoration: none;
   outline: none;
+  position: static;
 }
 
 .follows {
@@ -63,6 +64,11 @@
 .navbutton:focus {
   text-decoration: none;
   color: black;
+}
+
+.modal-box {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 #profile {

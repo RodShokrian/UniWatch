@@ -29,16 +29,27 @@ input .login-input {
 }
 
 .submitbutton {
-  background-color: #0275d8;
+  background-color: #9099A2;
+  border: 2px solid #6D7993;
   cursor: pointer;
   display: block;
   position: relative;
-  border: 2px solid black;
   height: 41px;
   width: 65%;
   font-family: 'Poppins', sans-serif;
   border-radius: 5px;
   margin: auto;
+}
+
+.submitbutton:hover {
+  opacity: 2;
+  box-shadow:
+         1px 1px #6D7993,
+         2px 2px #6D7993,
+         3px 3px #6D7993,
+         3px 3px #6D7993;
+ -webkit-transform: translateX(-3px);
+ transform: translateX(-3px);
 }
 
 .nav-box {
@@ -48,12 +59,22 @@ input .login-input {
 }
 
 .exit-button {
-  background-color: #0275d8;
-  border: none;
+  background-color: #9099A2;
   margin-right: 10px;
   transition-duration: 0.4s;
   border-radius: 5px;
-  border: 2px solid black;
+  border: 2px solid #6D7993;
+}
+
+.exit-button:hover {
+  opacity: 2;
+  box-shadow:
+         1px 1px #6D7993,
+         1px 1px #6D7993,
+         2px 2px #6D7993,
+         2px 2px #6D7993;
+  -webkit-transform: translateX(-3px);
+  transform: translateX(-3px);
 }
 
 h3 {

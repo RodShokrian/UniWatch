@@ -148,7 +148,6 @@ export class UniversityIndex extends React.Component {
               value={this.state.searchString}
               onChange={this.handleChange}
               placeholder="Search"
-              onfocus="this.placeholder=''"
               className="searchTerm" />
           </div>
         </div> <br />
