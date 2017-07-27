@@ -3,7 +3,7 @@
 export const collegeScoreFetcher = () => (
   $.ajax({
     method: 'GET',
-    url: 'https://api.data.gov/ed/collegescorecard/v1/schools.json?api_key=AGyC1nUMi9K1Dp0PEWOddfUSVxERBNq4dEk6T3fP&2014.admissions.sat_scores.average.overall__range=1200..&_fields=school.name,school.city,school.state,school.zip,school.school_url,school.price_calculator_url,location.lat,location.lon,school.minority_serving.historically_black,2014.admissions.sat_scores.average.overall,2014.admissions.admission_rate.overall,2014.student.enrollment.all,2014.cost.attendance.academic_year,2014.cost.tuition.in_state,2014.cost.tuition.out_of_state,2014.aid.median_debt.completers.overall&_sort=2014.admissions.sat_scores.average.overall:desc&_per_page=100'
+    url: 'https://api.data.gov/ed/collegescorecard/v1/schools.json?api_key=AGyC1nUMi9K1Dp0PEWOddfUSVxERBNq4dEk6T3fP&2014.admissions.sat_scores.average.overall__range=1200..&_fields=school.name,school.city,school.state,school.zip,school.school_url,school.price_calculator_url,location.lat,location.lon,school.minority_serving.historically_black,2014.admissions.sat_scores.average.overall,2014.admissions.admission_rate.overall,2014.student.enrollment.all,2014.admissions.act_scores.midpoint.cumulative,2014.admissions.act_scores.midpoint.english,2014.admissions.act_scores.midpoint.math,2014.admissions.act_scores.midpoint.writing,2014.cost.attendance.academic_year,2014.cost.tuition.in_state,2014.cost.tuition.out_of_state,2014.aid.median_debt.completers.overall&_sort=2014.admissions.sat_scores.average.overall:desc&_per_page=100'
   })
 );
 

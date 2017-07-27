@@ -60,6 +60,14 @@ class UniversityShow extends React.Component {
     const schoolUrl = "http://" + university.schoolSchoolUrl;
     const admissionRate = (Math.round(university.admissionsAdmissionRateOverall * 10000)/100).toString() + "%";
     const hbcuFlag = university.schoolMinorityServingHistoricallyBlack === 1 ? "Yes" : "No";
+    const ACTAverage = university.admissionsActScoresMidpointCumulative ?
+    university.admissionsActScoresMidpointCumulative : "N/A";
+    const ACTMath = university.admissionsActScoresMidpointMath ?
+    university.admissionsActScoresMidpointMath : "N/A";
+    const ACTEnglish = university.admissionsActScoresMidpointEnglish ?
+    university.admissionsActScoresMidpointEnglish : "N/A";
+    const ACTWriting = university.admissionsActScoresMidpointWriting ?
+    university.admissionsActScoresMidpointWriting : "N/A";
     return (
       <div className="show-page-container">
         <div className="left-show-box">
@@ -86,6 +94,10 @@ class UniversityShow extends React.Component {
           <div className="show-academics-box">Admissions
             <div className="show-academics">Admission Rate: {admissionRate}</div>
             <div className="show-academics">SAT Average (Reading & Math): {university.admissionsSatScoresAverageOverall}</div>
+            <div className="show-academics">ACT Average: {ACTAverage}</div>
+            <div className="show-academics">ACT Math: {ACTMath}</div>
+            <div className="show-academics">ACT Reading: {ACTEnglish}</div>
+            <div className="show-academics">ACT Writing: {ACTWriting}</div>
           </div>
           <div className="show-cost-box">Finances
             <div className="show-costs">In-State Tuition: ${university.costTuitionInState}</div>

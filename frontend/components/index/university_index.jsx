@@ -30,6 +30,10 @@ export class UniversityIndex extends React.Component {
     this.props.requestUniData();
   }
 
+  componentWillUnmount() {
+    sliderInitialize = false;
+  }
+
   handleChange(e) {
       this.setState({searchString: e.target.value});
   }
@@ -105,8 +109,7 @@ export class UniversityIndex extends React.Component {
           range: {min: 1000, max: 1600},
           tooltips: true,
           format: wNumb({decimals: 0}),
-          step: 20,
-          pips: {mode: 'steps', stepped: true, density: 10}
+          pips: {mode: 'range', density: 10}
         });
         sliderInitialize = true;
         slider.noUiSlider.on('update', this.handleSlide)

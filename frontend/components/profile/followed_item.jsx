@@ -10,6 +10,15 @@ class FollowedItem extends React.Component {
     const priceCalculatorUrl = "http://" + university.schoolPriceCalculatorUrl;
     const admissionRate = (Math.round(university.admissionsAdmissionRateOverall * 10000)/100).toString() + "%";
     const hbcuFlag = university.schoolMinorityServingHistoricallyBlack === 1 ? "Yes" : "No";
+    const ACTAverage = university.admissionsActScoresMidpointCumulative ?
+    university.admissionsActScoresMidpointCumulative : "N/A";
+    const ACTMath = university.admissionsActScoresMidpointMath ?
+    university.admissionsActScoresMidpointMath : "N/A";
+    const ACTEnglish = university.admissionsActScoresMidpointEnglish ?
+    university.admissionsActScoresMidpointEnglish : "N/A";
+    const ACTWriting = university.admissionsActScoresMidpointWriting ?
+    university.admissionsActScoresMidpointWriting : "N/A";
+
     return (
       <div className="item-box">
         <div id="header">
@@ -25,6 +34,10 @@ class FollowedItem extends React.Component {
         <div className="academics-box">Admissions
             <div className="academics">Admission Rate: {admissionRate}</div>
             <div className="academics">SAT Average (Reading & Math): {university.admissionsSatScoresAverageOverall}</div>
+            <div className="academics">ACT Average: {ACTAverage}</div>
+            <div className="academics">ACT Math: {ACTMath}</div>
+            <div className="academics">ACT Reading: {ACTEnglish}</div>
+            <div className="academics">ACT Writing: {ACTWriting}</div>
         </div>
         <div className="cost-box">Finances
           <div className="costs">
