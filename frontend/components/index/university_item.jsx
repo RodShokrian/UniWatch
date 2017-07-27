@@ -41,22 +41,23 @@ class UniversityItem extends React.Component {
     }
     if (this.props.currentUser) {
       return (
+      <a href={`/university/${university.id}`} className="university-item-wrapper">
         <div className="university-item-box">
           <img className="university-seal" src={university.imgUrl} />
           <div className="title-location-box">
-            <Link to={`/university/${university.id}`}>
-              <span id="index-name"> { name } </span>
-            </Link>
+            <span id="index-name"> { name } </span>
             <div className="university-location">
               <span>{university.schoolCity}, {university.schoolState}</span>
             </div>
           </div>
           <div className="university-metrics-box">
             <span className="metrics">Tuition and Fees: ${university.costTuitionOutOfState}</span><br />
-            <span className="metrics">Average SAT Scores (math & reading): {university.admissionsSatScoresAverageOverall}</span>
+            <span className="metrics">Average SAT Scores (math & reading): {university.admissionsSatScoresAverageOverall}</span><br />
+            <span className="metrics">Average ACT Scores (cumulative): {university.admissionsActScoresMidpointCumulative}</span>
           </div>
           <input className="follow-button" type="checkbox" checked={this.state.following} onChange={this.toggleFollow} />
         </div>
+        </a>
       );
     }
     return (

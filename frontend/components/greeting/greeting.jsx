@@ -10,16 +10,16 @@ const signedOutGreeting = () => (
     &nbsp;
     <AuthModal formType="signup"/>
     &nbsp;
-    <Link className="demo-link" to="/demo">Demo</Link>
+    <Link className="navbutton" to="/demo">Demo Login</Link>
 </div>
 );
 
 const signedInGreeting = (currentUser, logout) => (
   <div className="navbar-links navbar-text">
      <button className="navbutton" onClick={logout}>Log Out</button>
-     <Link to={`/profile/${currentUser.id}`}>
-       <span id="profile">My Profile</span>
-     </Link>
+      <a className="navbutton follows" href={`/#/profile/${currentUser.id}`}>
+       My Followed Universities
+     </a>
    </div>
 );
 

@@ -25,6 +25,7 @@
 }
 
 .github-icon {
+  margin-left: 20px;
   color: black;
   transition-duration: 0.4s;
 }

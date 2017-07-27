@@ -18,11 +18,13 @@ export class UniversityIndex extends React.Component {
       data: [],
       perPage: 10,
       offset: 0,
-      sliders: {}
+      satSliders: {},
+      actSliders: {}
     };
     this.handleChange = this.handleChange.bind(this);
     this.handlePageClick = this.handlePageClick.bind(this);
-    this.handleSlide = this.handleSlide.bind(this);
+    this.handleACTSlide = this.handleACTSlide.bind(this);
+    this.handleSATSlide = this.handleSATSlide.bind(this);
   }
 
   componentDidMount() {
@@ -46,8 +48,12 @@ export class UniversityIndex extends React.Component {
     });
   }
 
-  handleSlide (newVals) {
-    this.setState({ sliders: newVals })
+  handleSATSlide (newVals) {
+    this.setState({ satSliders: newVals })
+  }
+
+  handleACTSlide (newVals) {
+    this.setState({ actSliders: newVals })
   }
 
   render() {
@@ -68,10 +74,18 @@ export class UniversityIndex extends React.Component {
       });
     }
 
-    if (Object.keys(this.state.sliders).length > 0) {
+    if (Object.keys(this.state.satSliders).length > 0) {
       libraries = libraries.filter((l) => {
-        if (l.admissionsSatScoresAverageOverall >= this.state.sliders[0] &&
-            l.admissionsSatScoresAverageOverall <= this.state.sliders[1]) {
+        if (l.admissionsSatScoresAverageOverall >= this.state.satSliders[0] &&
+            l.admissionsSatScoresAverageOverall <= this.state.satSliders[1]) {
+              return l;
+            }
+      });
+    }
+    if (Object.keys(this.state.actSliders).length > 0) {
+      libraries = libraries.filter((l) => {
+        if (l.admissionsActScoresMidpointCumulative >= this.state.actSliders[0] &&
+            l.admissionsActScoresMidpointCumulative <= this.state.actSliders[1]) {
               return l;
             }
       });
@@ -101,9 +115,18 @@ export class UniversityIndex extends React.Component {
        ));
     }
     if (sliderInitialize === false) {
-      let slider = document.getElementById('slider');
-      if (slider) {
-        noUiSlider.create(slider, {
+      let satSlider = document.getElementById('sat-slider');
+      let actSlider = document.getElementById('act-slider');
+      if (satSlider) {
+        noUiSlider.create(actSlider, {
+            start: [0, 36],
+            connect: [false, true, false],
+            range: {min: 0, max: 36},
+            tooltips: true,
+            format: wNumb({decimals: 0}),
+            pips: {mode: 'range', density: 10}
+        });
+        noUiSlider.create(satSlider, {
           start: [1000, 1600],
           connect: [false, true, false],
           range: {min: 1000, max: 1600},
@@ -112,21 +135,21 @@ export class UniversityIndex extends React.Component {
           pips: {mode: 'range', density: 10}
         });
         sliderInitialize = true;
-        slider.noUiSlider.on('update', this.handleSlide)
+        satSlider.noUiSlider.on('update', this.handleSATSlide)
+        actSlider.noUiSlider.on('update', this.handleACTSlide)
       }
     }
     return (
       <div id="index-container">
         <div className="wrap">
           <div className="search">
+            <i className="fa fa-search search-icon"></i>
             <input type="text"
               value={this.state.searchString}
               onChange={this.handleChange}
               placeholder="Search"
+              onfocus="this.placeholder=''"
               className="searchTerm" />
-            <button type="submit" className="searchButton" disabled>
-              <i className="fa fa-search search-icon"></i>
-            </button>
           </div>
         </div> <br />
         <div className="index-box">
@@ -134,7 +157,11 @@ export class UniversityIndex extends React.Component {
             <div className="score-filter-header">
               Average SAT Scores
             </div>
-            <div id='slider'></div>
+            <div id='sat-slider'></div>
+            <div className="score-filter-header2">
+              Average ACT Scores
+            </div>
+            <div id='act-slider'></div>
           </div>
           <section className="university-index">
 

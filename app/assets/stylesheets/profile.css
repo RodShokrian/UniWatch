@@ -1,5 +1,5 @@
 #profile-container {
-  margin-top: 63px;
+  padding-top: 100px;
   background-color: #D5D5D5;
   height: 100%;
   padding-left: 4%;
@@ -11,18 +11,14 @@
   padding-left: 5px;
 }
 
-.profile-name {
-  margin-top: 30px;
-  font-size: 48px;
-  font-weight: 600;
-}
-
 #follows-header {
   margin-top: 20px;
   margin-left: 10px;
   font-size: 48px;
   border-bottom: solid black 2px;
-  max-width: 480px;
+  padding-bottom: 10px;
+  width: 99%;
+  text-align: center;
 }
 
 .followed-universities-container {
