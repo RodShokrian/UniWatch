@@ -41,7 +41,7 @@ class UniversityItem extends React.Component {
     }
     if (this.props.currentUser) {
       return (
-      <a href={`/university/${university.id}`} className="university-item-wrapper">
+      <a href={`/#/university/${university.id}`} className="university-item-wrapper">
         <div className="university-item-box">
           <img className="university-seal" src={university.imgUrl} />
           <div className="title-location-box">
@@ -61,24 +61,26 @@ class UniversityItem extends React.Component {
       );
     }
     return (
-      <div className="university-item-box">
-        <img className="university-seal" src={university.imgUrl} />
-        <div className="title-location-box">
-          <Link to={`/university/${university.id}`}>
-            <span id="index-name"> { name } </span>
-          </Link>
-          <div className="university-location">
-            <span>{university.schoolCity}, {university.schoolState}</span>
+      <a href={`/#/university/${university.id}`} className="university-item-wrapper">
+        <div className="university-item-box">
+          <img className="university-seal" src={university.imgUrl} />
+          <div className="title-location-box">
+            <Link to={`/university/${university.id}`}>
+              <span id="index-name"> { name } </span>
+            </Link>
+            <div className="university-location">
+              <span>{university.schoolCity}, {university.schoolState}</span>
+            </div>
+          </div>
+          <div className="university-metrics-box">
+            <span className="metrics">Tuition and Fees: ${university.costTuitionOutOfState}</span>
+            <br />
+            <span className="metrics">Average SAT Scores (math & reading): {university.admissionsSatScoresAverageOverall}</span>
+            <br />
+            <span className="metrics">Admission Rate: {Math.round(university.admissionsAdmissionRateOverall * 10000) / 100}%</span>
           </div>
         </div>
-        <div className="university-metrics-box">
-          <span className="metrics">Tuition and Fees: ${university.costTuitionOutOfState}</span>
-          <br />
-          <span className="metrics">Average SAT Scores (math & reading): {university.admissionsSatScoresAverageOverall}</span>
-          <br />
-          <span className="metrics">Admission Rate: {Math.round(university.admissionsAdmissionRateOverall * 10000) / 100}%</span>
-        </div>
-      </div>
+      </a>
     );
   }
 }
