@@ -1,3 +1,4 @@
+/*
 #CAEBF2 Sky
 #A9A9A9 Carbon
 #FF3B3F Watermelon
@@ -6,7 +7,7 @@
 #9099A2 Overcast
 #6D7993 Lavender
 #96858F Dusty
-
+*/
 
 .scroll-container {
   margin-top: 30px;
@@ -25,7 +26,7 @@
 
 .filters-box {
   margin-left: 5%;
-  margin-bottom: 50px;
+  padding-bottom: 100px;
   width: 20%;
   max-width: 200px;
   position: fixed;
