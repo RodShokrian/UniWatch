@@ -77,7 +77,7 @@ class UniversityItem extends React.Component {
             <br />
             <span className="metrics">Average SAT Scores (math & reading): {university.admissionsSatScoresAverageOverall}</span>
             <br />
-            <span className="metrics">Admission Rate: {Math.round(university.admissionsAdmissionRateOverall * 10000) / 100}%</span>
+            <span className="metrics">Average ACT Scores (cumulative): {university.admissionsActScoresMidpointCumulative}</span>
           </div>
         </div>
       </a>
