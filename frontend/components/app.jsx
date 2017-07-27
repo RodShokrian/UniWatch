@@ -32,7 +32,7 @@ const App = () => (
     </header>
     <Switch>
       <Route path="/" exact component={IndexContainer} />
-      <ProtectedRoute path="/university/:universityId" exact component={ShowContainer} />
+      <Route path="/university/:universityId" exact component={ShowContainer} />
       <ProtectedRoute path="/profile/:userId" exact component={ProfileContainer} />
       <AuthRoute path="/demo" exact component={AuthFormContainer} />
     </Switch>
