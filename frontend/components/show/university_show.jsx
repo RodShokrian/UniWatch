@@ -43,7 +43,7 @@ class UniversityShow extends React.Component {
       return (<div id="show-map" ref="map"></div>);
     }
     const university = this.props.currentUniversity;
-    const priceCalculatorUrl = "http://" + university.schoolPriceCalculatorUrl;
+    const priceCalculatorUrl = university.schoolPriceCalculatorUrl;
     const schoolUrl = "http://" + university.schoolSchoolUrl;
     const admissionRate = (Math.round(university.admissionsAdmissionRateOverall * 10000)/100).toString() + "%";
     const hbcuFlag = university.schoolMinorityServingHistoricallyBlack === 1 ? "Yes" : "No";
@@ -63,9 +63,9 @@ class UniversityShow extends React.Component {
             <img className="header-logo" src={university.imgUrl}></img>
             <div className="header">
               <h2 className="link-header">{ university.schoolName }</h2>
-              <div className="location">
+              <span className="location">
                 {university.schoolCity}, {university.schoolState} {university.schoolZip}
-              </div>
+              </span><br />
                 <a href={schoolUrl} className="school-url">School Website</a>
             </div>
           </div>
@@ -75,21 +75,50 @@ class UniversityShow extends React.Component {
         </div>
         <div className="right-show-box">
           <div id="show-map" ref="map"></div>
+          <div className="show-metrics-headline">University Data</div>
           <div className="show-academics-box">Admissions
-            <div className="show-academics">Admission Rate: {admissionRate}</div>
-            <div className="show-academics">SAT Average (Reading & Math): {SATAverage}</div>
-            <div className="show-academics">ACT Average: {ACTAverage}</div>
-            <div className="show-academics">ACT Math: {ACTMath}</div>
-            <div className="show-academics">ACT Reading: {ACTEnglish}</div>
-            <div className="show-academics">ACT Writing: {ACTWriting}</div>
+            <div className="show-academics">
+              <span className="show-field">Admission Rate:</span>
+              <span className="show-data">{admissionRate}</span>
+            </div>
+            <div className="show-academics">
+              <span className="show-field">SAT Average (Reading & Math):</span>
+              <span className="show-data">{SATAverage}</span>
+            </div>
+            <div className="show-academics">
+              <span className="show-field">ACT Average:</span>
+              <span className="show-data">{ACTAverage}</span>
+            </div>
+            <div className="show-academics">
+              <span className="show-field">ACT Math:</span>
+              <span className="show-data">{ACTMath}</span>
+            </div>
+            <div className="show-academics">
+              <span className="show-field">ACT Reading:</span>
+              <span className="show-data">{ACTEnglish}</span>
+            </div>
+            <div className="show-academics">
+              <span className="show-field">ACT Writing:</span>
+              <span className="show-data">{ACTWriting}</span>
+            </div>
           </div>
-          <div className="show-cost-box">Finances
-            <div className="show-costs">In-State Tuition: ${university.costTuitionInState}</div>
-            <div className="show-costs">Out-of-State Tuition: ${university.costTuitionOutOfState}</div>
-            <div className="show-costs">Average Cost of Attendance: ${university.costAttendanceAcademicYear}</div>
-            <div className="show-costs">Median Debt Load of Graduates: ${university.aidMedianDebtCompletersOverall}</div>
+          <div className="show-cost-box">Finances<br />
+            <a className="price-calculator" href={priceCalculatorUrl}>Price Calculator</a>
             <div className="show-costs">
-              <a className="price-calculator" href={priceCalculatorUrl}>{university.schoolName} Price Calculator</a>
+              <span className="show-field">In-State Tuition:</span>
+              <span className="show-data">${university.costTuitionInState}</span>
+            </div>
+            <div className="show-costs">
+              <span className="show-field">Out-of-State Tuition:</span>
+              <span className="show-data">${university.costTuitionOutOfState}</span>
+            </div>
+            <div className="show-costs">
+              <span className="show-field">Average Cost of Attendance:</span>
+              <span className="show-data">${university.costAttendanceAcademicYear}</span>
+            </div>
+            <div className="show-costs">
+              <span className="show-field">Median Debt Load of Graduates:</span>
+              <span className="show-data">${university.aidMedianDebtCompletersOverall}</span>
             </div>
           </div>
         </div>

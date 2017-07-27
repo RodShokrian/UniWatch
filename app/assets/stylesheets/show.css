@@ -12,14 +12,13 @@
 }
 
 .left-show-box {
-  display: flex;
-  flex-direction: column;
   width: 50%;
 }
 
 .header-box {
   display: flex;
   width: 100%;
+  max-height: 300px;
 }
 
 .header-logo {
@@ -53,34 +52,70 @@
 
 .right-show-box {
   margin-left: 50px;
-  display: flex;
-  flex-direction: column;
   width: 50%;
 }
 
+.show-metrics-headline {
+  margin-top: 100px;
+  margin-bottom: 10px;
+  font-size: 48px;
+  border-bottom: solid black 2px;
+  padding-bottom: 10px;
+  width: 70%;
+  text-align: center;
+}
+
 .show-academics-box {
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
   padding-top: 50px;
   font-size: 36px;
   font-weight: 400;
+  margin-right: 30%;
+  padding-left: 10%;
+  padding-right: 10%;
+  background-color: #EFEFEF;
 }
 
 .show-academics {
   font-size: 18px;
+  margin-top: 10px;
+  display: flex;
 }
 
 .show-cost-box {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
   font-size: 36px;
+  padding-top: 50px;
   font-weight: 400;
+  margin-right: 30%;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-bottom: 50px;
+  background-color: #EFEFEF;
 }
 
 .show-costs {
+  margin-top: 10px;
   font-size: 18px;
+  display: flex;
 }
 
 .price-calculator {
+  margin-bottom: 30px;
   color: #6D7993;
+  font-size: 22px;
 }
 
+.show-field {
+  text-align: left;
+}
+
+.show-data {
+  text-align: center;
+  margin-left: auto;
+}
 #show-map {
   width: 70%;
   height: 350px;

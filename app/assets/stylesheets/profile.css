@@ -28,7 +28,7 @@
 .followed-universities-box{
   margin: 10px;
   padding: 10px;
-  background-color: #D5D5D5;
+  background-color: #EFEFEF;
   box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
 }
 
@@ -43,9 +43,10 @@
   padding: 15px;
 }
 
+
 #link-header {
   color: #6D7993;
-  font-size: 24px;
+  font-size: 36px;
 }
 
 .profile-location {
@@ -67,6 +68,7 @@
   font-weight: 300;
   margin-top: 15px;
   margin-bottom: 15px;
+  display: flex;
 }
 
 .cost-box{
@@ -80,6 +82,18 @@
 .costs {
   font-size: 14px;
   font-weight: 300;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  display: flex;
+}
+
+.profile-field {
+  text-align: left;
+}
+
+.profile-data {
+  text-align: center;
+  margin-left: auto;
 }
 
 #price-calculator {

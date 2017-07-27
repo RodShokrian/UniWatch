@@ -32,21 +32,51 @@ class FollowedItem extends React.Component {
           </div>
         </div>
         <div className="academics-box">Admissions
-            <div className="academics">Admission Rate: {admissionRate}</div>
-            <div className="academics">SAT Average (Reading & Math): {university.admissionsSatScoresAverageOverall}</div>
-            <div className="academics">ACT Average: {ACTAverage}</div>
-            <div className="academics">ACT Math: {ACTMath}</div>
-            <div className="academics">ACT Reading: {ACTEnglish}</div>
-            <div className="academics">ACT Writing: {ACTWriting}</div>
+            <div className="academics">
+              <span className="profile-field">Admission Rate:</span>
+              <span className="profile-data">{admissionRate}</span>
+            </div>
+            <div className="academics">
+              <span className="profile-field">SAT Average (Reading & Math):</span>
+              <span className="profile-data">{university.admissionsSatScoresAverageOverall}</span>
+             </div>
+            <div className="academics">
+              <span className="profile-field">ACT Average: </span>
+              <span className="profile-data">{ACTAverage}</span>
+            </div>
+            <div className="academics">
+              <span className="profile-field">ACT Math: </span>
+              <span className="profile-data">{ACTMath}</span>
+            </div>
+            <div className="academics">
+              <span className="profile-field">ACT Reading: </span>
+              <span className="profile-data">{ACTEnglish}</span>
+            </div>
+            <div className="academics">
+              <span className="profile-field">ACT Writing: </span>
+              <span className="profile-data">{ACTWriting}</span>
+            </div>
         </div>
         <div className="cost-box">Finances
           <div className="costs">
             <a id="price-calculator" href={priceCalculatorUrl}>{university.schoolName} Price Calculator</a>
           </div>
-          <div className="costs">In-State Tuition: ${university.costTuitionInState}</div>
-          <div className="costs">Out-of-State Tuition: ${university.costTuitionOutOfState}</div>
-          <div className="costs">Average Cost of Attendance: ${university.costAttendanceAcademicYear}</div>
-          <div className="costs">Median Debt Load of Graduates: ${university.aidMedianDebtCompletersOverall}</div>
+          <div className="costs">
+            <span className="profile-field">In-State Tuition: </span>
+            <span className="profile-data">${university.costTuitionInState}</span>
+          </div>
+          <div className="costs">
+            <span className="profile-field">Out-of-State Tuition: </span>
+            <span className="profile-data">${university.costTuitionOutOfState}</span>
+          </div>
+          <div className="costs">
+            <span className="profile-field">Average Cost of Attendance: </span>
+            <span className="profile-data">${university.costAttendanceAcademicYear}</span>
+          </div>
+          <div className="costs">
+            <span className="profile-field">Median Debt Load of Graduates: </span>
+            <span className="profile-data">${university.aidMedianDebtCompletersOverall}</span>
+          </div>
 
         </div>
       </div>
