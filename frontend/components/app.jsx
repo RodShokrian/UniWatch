@@ -24,7 +24,7 @@ const App = () => (
         <div id="logo">
           <Link to="/">
             <img className="brand" src="http://res.cloudinary.com/dxucikdys/image/upload/v1500499016/Science-University_yzgogm.ico" alt="College symbol" height="38" width="50" />
-            <h2 className="navbar-brand">UniWatch</h2>
+            <h2 className="navbar-brand">University Watch</h2>
           </Link>
         </div>
         <GreetingContainer />
