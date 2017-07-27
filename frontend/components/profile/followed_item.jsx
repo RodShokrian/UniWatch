@@ -7,7 +7,7 @@ class FollowedItem extends React.Component {
 
   render() {
     const university = this.props.university;
-    const priceCalculatorUrl = "http://" + university.schoolPriceCalculatorUrl;
+    const priceCalculatorUrl = university.schoolPriceCalculatorUrl;
     const admissionRate = (Math.round(university.admissionsAdmissionRateOverall * 10000)/100).toString() + "%";
     const hbcuFlag = university.schoolMinorityServingHistoricallyBlack === 1 ? "Yes" : "No";
     const ACTAverage = university.admissionsActScoresMidpointCumulative ?
