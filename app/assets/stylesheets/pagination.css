@@ -12,22 +12,35 @@
     cursor: default;
 }
 
+.pagination {
+  margin-top: 25px;
+  width: 100%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
 .page-link {
   margin-left: 5px;
   margin-right: 5px;
+  padding: 0px;
   display: flex;
 }
 
 .page-link a {
   text-decoration: none;
   color: #6D7993;
+  cursor: pointer;
+  padding: 15px;
 }
 
 .previous-link {
+  margin-top: 7px;
   margin-left: 5px;
   margin-right: 5px;
   color: #6D7993;
   outline: none;
+  cursor: pointer;
 }
 
 .previous-link a {
@@ -40,10 +53,12 @@
 }
 
 .next-link {
+  margin-top: 7px;
   margin-right: 5px;
   margin-left: 5px;
   color: #6D7993;
   outline: none;
+  cursor: pointer;
 }
 
 .next-link a {

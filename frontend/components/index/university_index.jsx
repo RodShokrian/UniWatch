@@ -188,14 +188,3 @@ export class UniversityIndex extends React.Component {
     );
   }
 }
-
-//
-// <Slider width={100}
-//         leftwidth={20}
-//         rightwidth={20}
-//         leftNumber={0}
-//         rightNumber={1600}
-//         initialLeftNumber={0}
-//         initialRightNumber={1600}
-//         onSliderUpdate={this.handleSlide} />
-// </div>

@@ -1,3 +1,5 @@
+@media (min-width: 1400px) {
+
 .show-page-container {
   padding-left: 8%;
   padding-right: 8%;
@@ -119,4 +121,133 @@
 #show-map {
   width: 70%;
   height: 350px;
-};
+}
+
+}
+
+@media (max-width : 1399px) {
+
+  .show-page-container {
+    padding-left: 8%;
+    padding-right: 8%;
+    background-color: #D5D5D5;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.16), 0 0 0 1px rgba(0,0,0,0.04);
+    padding-top: 150px;
+    padding-bottom: 100px;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+
+  .left-show-box {
+    width: 50%;
+  }
+
+  .header-box {
+    display: flex;
+    width: 100%;
+    max-height: 300px;
+  }
+
+  .header-logo {
+    max-height: 300px;
+    max-width: 300px;
+    margin-right: 30px;
+    height: 95%;
+    width: 95%;
+  }
+
+  .header {
+    width: 95%;
+    padding-left: 25px;
+    padding-right: 25px;
+    padding-bottom: 25px;
+  }
+
+  .link-header {
+    font-size: 32px;
+    font-weight: 500;
+  }
+
+  .location {
+    font-size: 24px;
+  }
+
+  .school-url {
+    color: #6D7993;
+    font-size: 24px;
+  }
+
+  .right-show-box {
+    margin-left: 50px;
+    width: 50%;
+  }
+
+  .show-metrics-headline {
+    margin-top: 100px;
+    margin-bottom: 10px;
+    font-size: 48px;
+    border-bottom: solid black 2px;
+    padding-bottom: 10px;
+    width: 70%;
+    text-align: center;
+  }
+
+  .show-academics-box {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    padding-top: 50px;
+    font-size: 36px;
+    font-weight: 400;
+    margin-right: 30%;
+    padding-left: 10%;
+    padding-right: 10%;
+    background-color: #EFEFEF;
+  }
+
+  .show-academics {
+    font-size: 18px;
+    margin-top: 10px;
+    display: flex;
+  }
+
+  .show-cost-box {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    font-size: 36px;
+    padding-top: 50px;
+    font-weight: 400;
+    margin-right: 30%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-bottom: 50px;
+    background-color: #EFEFEF;
+  }
+
+  .show-costs {
+    margin-top: 10px;
+    font-size: 18px;
+    display: flex;
+  }
+
+  .price-calculator {
+    margin-bottom: 30px;
+    color: #6D7993;
+    font-size: 22px;
+  }
+
+  .show-field {
+    text-align: left;
+  }
+
+  .show-data {
+    text-align: center;
+    margin-left: auto;
+  }
+  #show-map {
+    width: 70%;
+    height: 350px;
+  }
+
+}
