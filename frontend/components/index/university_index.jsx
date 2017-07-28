@@ -49,11 +49,11 @@ export class UniversityIndex extends React.Component {
   }
 
   handleSATSlide (newVals) {
-    this.setState({ satSliders: newVals })
+    this.setState({ satSliders: newVals });
   }
 
   handleACTSlide (newVals) {
-    this.setState({ actSliders: newVals })
+    this.setState({ actSliders: newVals });
   }
 
   render() {

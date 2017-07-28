@@ -11,7 +11,7 @@ const signedOutGreeting = () => (
     <AuthModal formType="signup"/>
     &nbsp;
     <Link to="/demo">
-      <button className="navbutton" disabled>
+      <button className="navbutton">
         Demo Login
       </button>
     </Link>
@@ -22,7 +22,7 @@ const signedInGreeting = (currentUser, logout) => (
   <div className="navbar-links navbar-text">
     <button className="navbutton" onClick={logout}>Log Out</button>
     <a className="follows" href={`/#/profile/${currentUser.id}`}>
-      <button className="navbutton" disabled>
+      <button className="navbutton">
         My Followed Universities
       </button>
     </a>
