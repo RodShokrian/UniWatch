@@ -25,6 +25,8 @@ The university index page is rendered by a few React components: the UniversityI
 
 ![University-Watch Sliders](./docs/Sliders.gif)
 
+The university index can be filtered by test scores through sliders on the left-hand side of the page. The slider input is matched against each UniversityItem's props, filtering out UniversityItems that do not match the criteria.
+
 ## Search
 
 ![University-Watch Search Bar](./docs/SearchGif.gif)
@@ -34,32 +36,16 @@ The university index can be quickly filtered through the search bar. The string 
 
 
 
-The React component structure for notebooks mirrored that of notes: the NotebookIndex component renders a list of CondensedNotebooks as subcomponents, along with one ExpandedNotebook, kept track of by NotebookStore.selectedNotebook().
 
-NotebookIndex render method:
+## Future Directions for the Project
 
-render: function () {
-  return ({this.state.notebooks.map(function (notebook) {
-    return <CondensedNotebook notebook={notebook} />
-  }
-  <ExpandedNotebook notebook={this.state.selectedNotebook} />)
-}
-Tags
+In addition to the currently implemented features, I plan to continue expanding the site's functionality through these additional features.
 
-As with notebooks, tags are stored in the database through a tag table and a join table. The tag table contains the columns id and tag_name. The tagged_notes table is the associated join table, which contains three columns: id, tag_id, and note_id.
+## Data Visualization
 
-Tags are maintained on the frontend in the TagStore. Because creating, editing, and destroying notes can potentially affect Tag objects, the NoteIndex and the NotebookIndex both listen to the TagStore. It was not necessary to create a Tag component, as tags are simply rendered as part of the individual Note components.
+Ultimately, University Watch is a tool for comparing colleges. Future iterations of the site will include charts and graphs to measure the relative costs and admission criteria of different institutions. I plan to use the Recharts library to implement this feature.
 
-tag screenshot
 
-Future Directions for the Project
+## Refined Search Features
 
-In addition to the features already implemented, I plan to continue work on this project. The next steps for FresherNote are outlined below.
-
-Search
-
-Searching notes is a standard feature of Evernote. I plan to utilize the Fuse.js library to create a fuzzy search of notes and notebooks. This search will look go through tags, note titles, notebook titles, and note content.
-
-Direct Messaging
-
-Although this is less essential functionality, I also plan to implement messaging between FresherNote users. To do this, I will use WebRTC so that notifications of messages happens seamlessly.
+Currently, the search bar is only able to search for universities by name. I plan to implement a more robust search feature that will be able to filter universities by data fields, including scores, costs, or admissions rates.
